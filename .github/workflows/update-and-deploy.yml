@@ -35,17 +35,29 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Download qa-automation-template allure artifact
-        if: ${{ github.event_name == 'repository_dispatch' || (vars.SOURCE_REPO != '' && vars.SOURCE_WORKFLOW != '') }}
-        id: download
+      - name: Download dispatched allure artifact by run id
+        if: ${{ github.event_name == 'repository_dispatch' }}
+        id: download-dispatch
         uses: dawidd6/action-download-artifact@v6
         with:
           github_token: ${{ secrets.SOURCE_REPO_TOKEN != '' && secrets.SOURCE_REPO_TOKEN || github.token }}
-          repo: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.source_repo || vars.SOURCE_REPO }}
-          workflow: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.source_workflow || vars.SOURCE_WORKFLOW }}
-          branch: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.source_branch || (vars.SOURCE_BRANCH != '' && vars.SOURCE_BRANCH || 'main') }}
-          run_id: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.source_run_id || '' }}
-          name: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.source_artifact || (vars.SOURCE_ARTIFACT != '' && vars.SOURCE_ARTIFACT || 'allure-results') }}
+          repo: ${{ github.event.client_payload.source_repo }}
+          workflow: ${{ github.event.client_payload.source_workflow }}
+          run_id: ${{ github.event.client_payload.source_run_id }}
+          name: ${{ github.event.client_payload.source_artifact || 'allure-results' }}
+          path: incoming/allure-results
+          if_no_artifact_found: fail
+
+      - name: Download latest configured allure artifact
+        if: ${{ github.event_name != 'repository_dispatch' && vars.SOURCE_REPO != '' && vars.SOURCE_WORKFLOW != '' }}
+        id: download-configured
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          github_token: ${{ secrets.SOURCE_REPO_TOKEN != '' && secrets.SOURCE_REPO_TOKEN || github.token }}
+          repo: ${{ vars.SOURCE_REPO }}
+          workflow: ${{ vars.SOURCE_WORKFLOW }}
+          branch: ${{ vars.SOURCE_BRANCH != '' && vars.SOURCE_BRANCH || 'main' }}
+          name: ${{ vars.SOURCE_ARTIFACT != '' && vars.SOURCE_ARTIFACT || 'allure-results' }}
           path: incoming/allure-results
           if_no_artifact_found: fail
 
