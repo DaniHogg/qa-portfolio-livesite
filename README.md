@@ -34,6 +34,14 @@ GitHub Actions workflow in .github/workflows/update-and-deploy.yml:
 - regenerates normalized JSON
 - deploys static site to GitHub Pages
 
+Required repository variables for cross-repo artifact ingestion:
+- SOURCE_REPO: owner/repo that produces allure-results
+- SOURCE_WORKFLOW: workflow filename in that repo (example: ci.yml)
+- SOURCE_BRANCH: optional, defaults to main
+- SOURCE_ARTIFACT: optional, defaults to allure-results
+
+If SOURCE_REPO or SOURCE_WORKFLOW is not set, the workflow skips ingestion and only deploys currently committed data.
+
 ## Hosting Recommendation
 1. GitHub Pages (default)
 2. Netlify (alternative)

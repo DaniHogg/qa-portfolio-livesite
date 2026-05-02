@@ -34,18 +34,20 @@ jobs:
           python-version: "3.11"
 
       - name: Download qa-automation-template allure artifact
+        if: ${{ vars.SOURCE_REPO != '' && vars.SOURCE_WORKFLOW != '' }}
         id: download
         uses: dawidd6/action-download-artifact@v6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          repo: ${{ vars.SOURCE_REPO || github.repository }}
-          workflow: ${{ vars.SOURCE_WORKFLOW || 'ci.yml' }}
-          branch: ${{ vars.SOURCE_BRANCH || 'main' }}
-          name: ${{ vars.SOURCE_ARTIFACT || 'allure-results' }}
+          repo: ${{ vars.SOURCE_REPO }}
+          workflow: ${{ vars.SOURCE_WORKFLOW }}
+          branch: ${{ vars.SOURCE_BRANCH != '' && vars.SOURCE_BRANCH || 'main' }}
+          name: ${{ vars.SOURCE_ARTIFACT != '' && vars.SOURCE_ARTIFACT || 'allure-results' }}
           path: incoming/allure-results
           if_no_artifact_found: fail
 
       - name: Extract normalized summary
+        if: ${{ vars.SOURCE_REPO != '' && vars.SOURCE_WORKFLOW != '' }}
         run: |
           python scripts/extract_qa_template_summary.py \
             --allure-dir incoming/allure-results \
@@ -55,7 +57,7 @@ jobs:
             --workflow "Update Data And Deploy" \
             --branch "${{ github.ref_name }}" \
             --commit-sha "${{ github.sha }}" \
-            --repo-url "https://github.com/${{ vars.SOURCE_REPO || github.repository }}"
+            --repo-url "https://github.com/${{ vars.SOURCE_REPO }}"
 
       - name: Commit refreshed data
         run: |
