@@ -12,20 +12,20 @@
     "repository_url": "https://github.com/DaniHogg/qa-automation-template"
   },
   "latest": {
-    "run_id": "gha-25244709985",
+    "run_id": "gha-25245216865",
     "source": {
       "provider": "github-actions",
       "workflow": "Update Data And Deploy",
       "branch": "main",
-      "commit_sha": "8ca845ce577e743a2ea967ef00d1431db3c4fe06",
-      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/25244709985"
+      "commit_sha": "8a54e73ebaea3f6cddee66ba9ba252ab145c6322",
+      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/25245216865"
     },
     "status": "partial",
-    "started_at": "2026-04-27T10:39:14.063000Z",
-    "completed_at": "2026-04-27T10:39:14.078000Z",
-    "duration_seconds": 0,
+    "started_at": "2026-05-02T05:27:11.835000Z",
+    "completed_at": "2026-05-02T05:27:20.287000Z",
+    "duration_seconds": 8,
     "totals": {
-      "passed": 16,
+      "passed": 20,
       "failed": 0,
       "skipped": 0,
       "errors": 0
@@ -46,9 +46,9 @@
       {
         "suite_id": "api-smoke",
         "suite_name": "API Smoke",
-        "status": "not-run",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 2,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -118,19 +118,25 @@
       {
         "suite_id": "web-smoke",
         "suite_name": "Web Smoke",
-        "status": "not-run",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 2,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "UI smoke coverage; may be workflow_dispatch-gated Not run in this cycle."
+        "notes": "UI smoke coverage; may be workflow_dispatch-gated"
       }
     ],
     "stale_after_days": 7
   },
   "history": [
+    {
+      "run_id": "gha-25245216865",
+      "status": "partial",
+      "completed_at": "2026-05-02T05:27:20.287000Z",
+      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/25245216865"
+    },
     {
       "run_id": "gha-25244709985",
       "status": "partial",
@@ -154,14 +160,8 @@
       "status": "partial",
       "completed_at": "2026-04-20T02:10:14.331000Z",
       "run_url": "https://example.local/runs/local-coverage-audit-2"
-    },
-    {
-      "run_id": "local-coverage-audit-1",
-      "status": "partial",
-      "completed_at": "2026-04-20T02:10:14.331000Z",
-      "run_url": "https://example.local/runs/local-coverage-audit-1"
     }
   ],
   "history_limit": 5,
-  "last_refreshed_at": "2026-05-02T05:24:49.250657Z"
+  "last_refreshed_at": "2026-05-02T05:54:16.613827Z"
 }
