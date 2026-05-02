@@ -1,7 +1,7 @@
 {
   "project_id": "qa-automation-template",
-  "run_id": "gha-25245216865",
-  "generated_at": "2026-05-02T05:54:16.614270Z",
+  "run_id": "25245221711",
+  "generated_at": "2026-05-02T05:56:02.887411Z",
   "summary": {
     "covered_suites": 0,
     "not_covered_suites": 0,
@@ -13,14 +13,14 @@
     {
       "suite_id": "api-regression",
       "expected_test_files": null,
-      "observed_results": 0,
-      "status": "not-run",
+      "observed_results": 13,
+      "status": "passed",
       "notes": "Suite observed in report but not in expected mapping"
     },
     {
       "suite_id": "api-smoke",
       "expected_test_files": null,
-      "observed_results": 2,
+      "observed_results": 6,
       "status": "passed",
       "notes": "Suite observed in report but not in expected mapping"
     },
@@ -41,8 +41,8 @@
     {
       "suite_id": "reference-winapp",
       "expected_test_files": null,
-      "observed_results": 0,
-      "status": "not-run",
+      "observed_results": 4,
+      "status": "failed",
       "notes": "Suite observed in report but not in expected mapping"
     },
     {
@@ -55,8 +55,8 @@
     {
       "suite_id": "web-regression",
       "expected_test_files": null,
-      "observed_results": 0,
-      "status": "not-run",
+      "observed_results": 10,
+      "status": "passed",
       "notes": "Suite observed in report but not in expected mapping"
     },
     {

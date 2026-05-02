@@ -12,21 +12,21 @@
     "repository_url": "https://github.com/DaniHogg/qa-automation-template"
   },
   "latest": {
-    "run_id": "gha-25245216865",
+    "run_id": "25245221711",
     "source": {
       "provider": "github-actions",
       "workflow": "Update Data And Deploy",
       "branch": "main",
-      "commit_sha": "8a54e73ebaea3f6cddee66ba9ba252ab145c6322",
-      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/25245216865"
+      "commit_sha": "a471c4c4ada23c0d9c3b318752f776469e15ff92",
+      "run_url": "https://github.com/DaniHogg/qa-automation-template/actions/runs/25245221711"
     },
-    "status": "partial",
-    "started_at": "2026-05-02T05:27:11.835000Z",
-    "completed_at": "2026-05-02T05:27:20.287000Z",
-    "duration_seconds": 8,
+    "status": "failed",
+    "started_at": "2026-05-02T05:55:03.208000Z",
+    "completed_at": "2026-05-02T05:55:29.817000Z",
+    "duration_seconds": 26,
     "totals": {
-      "passed": 20,
-      "failed": 0,
+      "passed": 47,
+      "failed": 4,
       "skipped": 0,
       "errors": 0
     },
@@ -34,21 +34,21 @@
       {
         "suite_id": "api-regression",
         "suite_name": "API Regression",
-        "status": "not-run",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 13,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Extended API coverage; may be workflow_dispatch-gated Not run in this cycle."
+        "notes": "Extended API coverage; may be workflow_dispatch-gated"
       },
       {
         "suite_id": "api-smoke",
         "suite_name": "API Smoke",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 6,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -82,14 +82,14 @@
       {
         "suite_id": "reference-winapp",
         "suite_name": "Reference WinApp",
-        "status": "not-run",
+        "status": "failed",
         "totals": {
           "passed": 0,
-          "failed": 0,
+          "failed": 4,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Windows-only template coverage; requires WinAppDriver on Windows agent Not run in this cycle."
+        "notes": "Windows-only template coverage; requires WinAppDriver on Windows agent"
       },
       {
         "suite_id": "unit",
@@ -106,14 +106,14 @@
       {
         "suite_id": "web-regression",
         "suite_name": "Web Regression",
-        "status": "not-run",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 10,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "UI regression coverage; may be workflow_dispatch-gated Not run in this cycle."
+        "notes": "UI regression coverage; may be workflow_dispatch-gated"
       },
       {
         "suite_id": "web-smoke",
@@ -131,6 +131,12 @@
     "stale_after_days": 7
   },
   "history": [
+    {
+      "run_id": "25245221711",
+      "status": "failed",
+      "completed_at": "2026-05-02T05:55:29.817000Z",
+      "run_url": "https://github.com/DaniHogg/qa-automation-template/actions/runs/25245221711"
+    },
     {
       "run_id": "gha-25245216865",
       "status": "partial",
@@ -154,14 +160,8 @@
       "status": "partial",
       "completed_at": "2026-04-20T02:10:14.331000Z",
       "run_url": "https://example.local/runs/local-coverage-audit-3"
-    },
-    {
-      "run_id": "local-coverage-audit-2",
-      "status": "partial",
-      "completed_at": "2026-04-20T02:10:14.331000Z",
-      "run_url": "https://example.local/runs/local-coverage-audit-2"
     }
   ],
   "history_limit": 5,
-  "last_refreshed_at": "2026-05-02T05:54:16.613827Z"
+  "last_refreshed_at": "2026-05-02T05:56:02.887044Z"
 }
