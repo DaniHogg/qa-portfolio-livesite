@@ -1,7 +1,7 @@
 {
   "project_id": "qa-automation-template",
-  "run_id": "gha-25244709985",
-  "generated_at": "2026-05-02T05:24:49.288667Z",
+  "run_id": "25245644019",
+  "generated_at": "2026-05-02T06:19:43.421084Z",
   "summary": {
     "covered_suites": 0,
     "not_covered_suites": 0,
@@ -62,8 +62,8 @@
     {
       "suite_id": "web-smoke",
       "expected_test_files": null,
-      "observed_results": 0,
-      "status": "not-run",
+      "observed_results": 2,
+      "status": "passed",
       "notes": "Suite observed in report but not in expected mapping"
     }
   ]
