@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
-from collections import defaultdict
+from collections import Counter, defaultdict
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -73,10 +73,15 @@ def classify_suite(record: dict[str, Any]) -> str:
     label_items = record.get("labels") or []
     tags = {x.get("value", "") for x in label_items if x.get("name") == "tag"}
     full_name = (record.get("fullName") or "").lower()
+    package = ""
+    for item in label_items:
+        if item.get("name") == "package":
+            package = str(item.get("value") or "").lower()
+            break
 
     if "unit" in tags or ".unit." in full_name:
         return "unit"
-    if "winapp" in tags or "winapp" in full_name:
+    if "winapp" in tags or "winapp" in full_name or ".reference.winapp." in package:
         return "reference-winapp"
     if "mobile" in tags or ".mobile." in full_name:
         return "mobile"
@@ -95,9 +100,14 @@ def classify_suite(record: dict[str, Any]) -> str:
             return "web-regression"
         return "web"
 
-    if ".api." in full_name:
+    if ".reference.api." in package or ".reference.api." in full_name:
+        return "reference-api"
+    if ".reference.web." in package or ".reference.web." in full_name:
+        return "reference-web"
+
+    if ".api." in full_name or ".api." in package:
         return "api"
-    if ".web." in full_name:
+    if ".web." in full_name or ".web." in package:
         return "web"
 
     return "other"
@@ -113,6 +123,8 @@ def suite_name(suite_id: str) -> str:
         "web-smoke": "Web Smoke",
         "web-regression": "Web Regression",
         "mobile": "Mobile",
+        "reference-api": "Reference API",
+        "reference-web": "Reference Web",
         "reference-winapp": "Reference WinApp",
         "other": "Other",
     }
@@ -127,8 +139,125 @@ def expected_suites(project_id: str) -> list[tuple[str, str]]:
             ("api-regression", "Extended API coverage; may be workflow_dispatch-gated"),
             ("web-smoke", "UI smoke coverage; may be workflow_dispatch-gated"),
             ("web-regression", "UI regression coverage; may be workflow_dispatch-gated"),
+            ("reference-api", "Template library; excluded from default pytest run unless explicitly invoked"),
+            ("reference-web", "Template library; excluded from default pytest run unless explicitly invoked"),
+            ("reference-winapp", "Windows-only template coverage; requires WinAppDriver on Windows agent"),
         ]
     return []
+
+
+def suite_execution_note(suite_id: str, status: str, base_note: str) -> str:
+    if status == "not-run":
+        if suite_id in {"reference-api", "reference-web"}:
+            return f"{base_note} Not run in this cycle."
+        if suite_id == "reference-winapp":
+            return f"{base_note} Not run in this cycle."
+        if suite_id in {"api-regression", "web-smoke", "web-regression"}:
+            return f"{base_note} Not run in this cycle."
+        if suite_id == "unit":
+            return f"{base_note} Not run in this cycle."
+    return base_note
+
+
+def collect_expected_counts(project_id: str) -> dict[str, int]:
+    if project_id != "qa-automation-template":
+        return {}
+
+    tests_root = Path(__file__).resolve().parents[2] / "qa-automation-template" / "tests"
+    if not tests_root.exists():
+        return {}
+
+    mapping = {
+        "api": "api-smoke",
+        "unit": "unit",
+        "reference/api": "reference-api",
+        "reference/web": "reference-web",
+        "reference/winapp": "reference-winapp",
+    }
+
+    counts: Counter[str] = Counter()
+    for test_file in tests_root.rglob("test_*.py"):
+        rel = test_file.relative_to(tests_root).as_posix()
+        group = None
+        for prefix, suite_id in mapping.items():
+            if rel.startswith(prefix + "/"):
+                group = suite_id
+                break
+        if group:
+            counts[group] += 1
+
+    return dict(counts)
+
+
+def build_coverage_audit(
+    project_id: str,
+    run_id: str,
+    latest: dict[str, Any],
+    expected_counts: dict[str, int],
+) -> dict[str, Any]:
+    suites = latest.get("suites", [])
+    by_id = {s.get("suite_id"): s for s in suites}
+
+    covered = []
+    not_covered = []
+    unknown = []
+
+    for suite_id, expected in sorted(expected_counts.items()):
+        suite = by_id.get(suite_id)
+        if not suite:
+            not_covered.append(
+                {
+                    "suite_id": suite_id,
+                    "expected_test_files": expected,
+                    "reason": "suite not present in summary",
+                }
+            )
+            continue
+
+        status = suite.get("status")
+        observed = int((suite.get("totals") or {}).get("passed", 0)) + int((suite.get("totals") or {}).get("failed", 0)) + int((suite.get("totals") or {}).get("skipped", 0))
+        row = {
+            "suite_id": suite_id,
+            "expected_test_files": expected,
+            "observed_results": observed,
+            "status": status,
+            "notes": suite.get("notes", ""),
+        }
+
+        if status in {"passed", "failed", "partial", "skipped"} and observed > 0:
+            covered.append(row)
+        elif status == "not-run":
+            not_covered.append(row)
+        else:
+            unknown.append(row)
+
+    for suite_id, suite in sorted(by_id.items()):
+        if suite_id not in expected_counts:
+            unknown.append(
+                {
+                    "suite_id": suite_id,
+                    "expected_test_files": None,
+                    "observed_results": int((suite.get("totals") or {}).get("passed", 0))
+                    + int((suite.get("totals") or {}).get("failed", 0))
+                    + int((suite.get("totals") or {}).get("skipped", 0)),
+                    "status": suite.get("status"),
+                    "notes": "Suite observed in report but not in expected mapping",
+                }
+            )
+
+    return {
+        "project_id": project_id,
+        "run_id": run_id,
+        "generated_at": now_iso(),
+        "summary": {
+            "covered_suites": len(covered),
+            "not_covered_suites": len(not_covered),
+            "unknown_suites": len(unknown),
+        },
+        "covered": covered,
+        "not_covered": not_covered,
+        "unknown": unknown,
+    }
 
 
 def combine_status(totals: Totals) -> str:
@@ -241,13 +370,15 @@ def main() -> int:
     suites: list[dict[str, Any]] = []
     for suite_id in sorted(suite_ids):
         stot = suite_totals.get(suite_id, Totals())
+        status = combine_status(stot)
+        base_note = notes_by_suite.get(suite_id, "")
         suites.append(
             {
                 "suite_id": suite_id,
                 "suite_name": suite_name(suite_id),
-                "status": combine_status(stot),
+                "status": status,
                 "totals": stot.to_dict(),
-                "notes": notes_by_suite.get(suite_id, ""),
+                "notes": suite_execution_note(suite_id, status, base_note),
             }
         )
 
@@ -312,6 +443,13 @@ def main() -> int:
     latest_path = project_dir / "latest.json"
     with latest_path.open("w", encoding="utf-8") as fh:
         json.dump(document, fh, indent=2)
+        fh.write("\n")
+
+    expected_counts = collect_expected_counts(args.project_id)
+    coverage = build_coverage_audit(args.project_id, args.run_id, latest, expected_counts)
+    coverage_path = project_dir / "coverage-audit.json"
+    with coverage_path.open("w", encoding="utf-8") as fh:
+        json.dump(coverage, fh, indent=2)
         fh.write("\n")
 
     ensure_project_index(output_root, args.project_id, "Flagship pytest framework with API, web, and unit coverage")

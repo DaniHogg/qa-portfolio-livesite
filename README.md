@@ -2,6 +2,8 @@
 
 Employer-facing static website that showcases QA automation repositories and the latest test evidence.
 
+The site is designed to republish fresh automated test evidence without manual intervention.
+
 ## What This Project Does
 - Publishes repository cards with latest run status.
 - Shows stale badges when data is older than 7 days.
@@ -28,11 +30,24 @@ python scripts/extract_qa_template_summary.py \
   --run-id local-run \
   --run-url http://localhost/local-run
 
+The extractor now also writes a per-run coverage audit artifact:
+- data/projects/<project-id>/coverage-audit.json
+
+Coverage audit includes:
+- covered suites
+- not-covered suites
+- expected test-file counts by suite (for mapped suites)
+- notes for not-run/prerequisite-gated suites
+
 ## Deployment
 GitHub Actions workflow in .github/workflows/update-and-deploy.yml:
 - downloads latest report artifacts
 - regenerates normalized JSON
 - deploys static site to GitHub Pages
+
+Automatic publish behavior:
+- scheduled fallback publish runs once a day
+- immediate publish can be triggered from the source test repository after fresh artifacts are uploaded
 
 Required repository variables for cross-repo artifact ingestion:
 - SOURCE_REPO: owner/repo that produces allure-results
@@ -40,7 +55,20 @@ Required repository variables for cross-repo artifact ingestion:
 - SOURCE_BRANCH: optional, defaults to main
 - SOURCE_ARTIFACT: optional, defaults to allure-results
 
+Required secret for reliable cross-repo artifact download:
+- SOURCE_REPO_TOKEN: fine-grained PAT with Actions read access to the source repository
+
+Optional source-repo automation for immediate publish after daily tests finish:
+- In the test repo, set variable PORTFOLIO_SITE_REPO to the live-site repo name (example: danihogg/qa-portfolio-livesite)
+- In the test repo, set secret PORTFOLIO_SITE_TOKEN to a fine-grained PAT with Contents/Actions access needed to dispatch the live-site workflow
+
 If SOURCE_REPO or SOURCE_WORKFLOW is not set, the workflow skips ingestion and only deploys currently committed data.
+
+## Daily Automation
+- qa-automation-template CI is scheduled to run once a day and upload merged `allure-results`.
+- qa-portfolio-live-site can publish in either of two ways:
+  - immediately, when the source repo dispatches a `portfolio-results-ready` event after uploading artifacts
+  - on its own daily schedule, which acts as a fallback if dispatch is not configured
 
 ## Hosting Recommendation
 1. GitHub Pages (default)

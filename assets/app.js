@@ -111,6 +111,31 @@ async function renderProject() {
       <a href="${h.run_url || '#'}" target="_blank" rel="noreferrer">Run</a>
     </li>
   `).join("\n");
+
+  const coveragePath = `data/projects/${projectId}/coverage-audit.json`;
+  const coverageLink = document.getElementById("coverage-link");
+  if (coverageLink) {
+    coverageLink.href = coveragePath;
+  }
+
+  const coverageHost = document.getElementById("coverage-summary");
+  if (coverageHost) {
+    try {
+      const coverage = await fetchJson(coveragePath);
+      const summary = coverage.summary || {};
+      const cards = [
+        ["Covered suites", summary.covered_suites],
+        ["Not covered suites", summary.not_covered_suites],
+        ["Unknown suites", summary.unknown_suites],
+        ["Audit run", coverage.run_id],
+      ];
+      coverageHost.innerHTML = cards
+        .map(([k, v]) => `<div class="card"><strong>${k}</strong><br>${v ?? "n/a"}</div>`)
+        .join("\n");
+    } catch (err) {
+      coverageHost.innerHTML = `<div class="card">Coverage audit unavailable: ${err.message}</div>`;
+    }
+  }
 }
 
 renderIndex().catch((err) => {
