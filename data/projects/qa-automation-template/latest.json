@@ -9,23 +9,32 @@
       "requests",
       "allure"
     ],
-    "repository_url": ""
+    "repository_url": "https://github.com/DaniHogg/qa-automation-template"
   },
   "latest": {
+<<<<<<< HEAD
     "run_id": "local-coverage-audit-3",
+=======
+    "run_id": "gha-25243755495",
+>>>>>>> refs/remotes/origin/main
     "source": {
       "provider": "github-actions",
-      "workflow": "Local Validation",
+      "workflow": "Update Data And Deploy",
       "branch": "main",
+<<<<<<< HEAD
       "commit_sha": "local-audit-3",
       "run_url": "https://example.local/runs/local-coverage-audit-3"
+=======
+      "commit_sha": "b0f064f934a731b5e7f79279316044bd69fbc00f",
+      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/25243755495"
+>>>>>>> refs/remotes/origin/main
     },
     "status": "partial",
-    "started_at": "2026-04-20T02:10:14.285000Z",
-    "completed_at": "2026-04-20T02:10:14.331000Z",
+    "started_at": "2026-04-27T10:39:14.063000Z",
+    "completed_at": "2026-04-27T10:39:14.078000Z",
     "duration_seconds": 0,
     "totals": {
-      "passed": 1,
+      "passed": 16,
       "failed": 0,
       "skipped": 0,
       "errors": 0
@@ -46,9 +55,9 @@
       {
         "suite_id": "api-smoke",
         "suite_name": "API Smoke",
-        "status": "passed",
+        "status": "not-run",
         "totals": {
-          "passed": 1,
+          "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -94,9 +103,9 @@
       {
         "suite_id": "unit",
         "suite_name": "Unit",
-        "status": "not-run",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 16,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -132,6 +141,7 @@
   },
   "history": [
     {
+<<<<<<< HEAD
       "run_id": "local-coverage-audit-3",
       "status": "partial",
       "completed_at": "2026-04-20T02:10:14.331000Z",
@@ -148,6 +158,12 @@
       "status": "partial",
       "completed_at": "2026-04-20T02:10:14.331000Z",
       "run_url": "https://example.local/runs/local-coverage-audit-1"
+=======
+      "run_id": "gha-25243755495",
+      "status": "partial",
+      "completed_at": "2026-04-27T10:39:14.078000Z",
+      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/25243755495"
+>>>>>>> refs/remotes/origin/main
     },
     {
       "run_id": "local-2026-05-02-6",
@@ -160,8 +176,27 @@
       "status": "partial",
       "completed_at": "2026-04-20T02:10:14.331000Z",
       "run_url": "https://example.local/runs/local-2026-05-02-5"
+<<<<<<< HEAD
     }
   ],
   "history_limit": 5,
   "last_refreshed_at": "2026-05-02T04:33:04.435229Z"
+=======
+    },
+    {
+      "run_id": "local-2026-05-02-4",
+      "status": "partial",
+      "completed_at": "2026-04-20T02:10:14.331000Z",
+      "run_url": "https://example.local/runs/local-2026-05-02-4"
+    },
+    {
+      "run_id": "local-2026-05-02-3",
+      "status": "partial",
+      "completed_at": "2026-04-20T02:10:14.331000Z",
+      "run_url": "https://example.local/runs/local-2026-05-02-3"
+    }
+  ],
+  "history_limit": 5,
+  "last_refreshed_at": "2026-05-02T04:29:04.452457Z"
+>>>>>>> refs/remotes/origin/main
 }
