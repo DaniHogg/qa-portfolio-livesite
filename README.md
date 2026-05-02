@@ -4,8 +4,14 @@ Employer-facing static website that showcases QA automation repositories and the
 
 The site is designed to republish fresh automated test evidence without manual intervention.
 
+## Site Layout
+- `index.html`: business landing page with your professional blurb and service focus.
+- `dashboard.html`: testing evidence dashboard with repository cards and latest run links.
+- `project.html`: per-repository detail view for latest status, suite-level results, and run history.
+
 ## What This Project Does
 - Publishes repository cards with latest run status.
+- Links each repository card to both the source repository and the latest workflow run evidence.
 - Shows stale badges when data is older than 7 days.
 - Keeps a rolling history of 5 runs per project.
 - Links directly to workflow runs and report artifacts.
@@ -74,5 +80,7 @@ If SOURCE_REPO or SOURCE_WORKFLOW is not set, the workflow skips ingestion and o
 1. GitHub Pages (default)
 2. Netlify (alternative)
 3. Cloudflare Pages (alternative)
+
+This structure is fully compatible with GitHub Pages because it is a static site that reads JSON from the same repository.
 
 Use a server-backed design only if you need private artifact proxying or authenticated APIs.

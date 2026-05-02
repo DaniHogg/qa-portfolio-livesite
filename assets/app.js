@@ -50,6 +50,7 @@ async function renderIndex() {
         <p class="${staleClass}">${stale}</p>
         <div class="link-row">
           <a href="project.html?project=${encodeURIComponent(item.id)}">View details</a>
+          <a href="${latest.project?.repository_url || '#'}" target="_blank" rel="noreferrer">Repository</a>
           <a href="${run.source?.run_url || '#'}" target="_blank" rel="noreferrer">Workflow run</a>
         </div>
       </article>

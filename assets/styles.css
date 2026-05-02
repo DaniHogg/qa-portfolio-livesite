@@ -62,6 +62,24 @@ body {
   gap: 1rem;
 }
 
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+
+.highlight-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fffefb;
+  padding: 0.9rem;
+}
+
+.highlight-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+
 .card, .panel {
   background: var(--card);
   border: 1px solid var(--line);
