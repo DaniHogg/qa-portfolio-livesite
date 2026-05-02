@@ -1,0 +1,80 @@
+name: Update Data And Deploy
+
+"on":
+  workflow_dispatch:
+  schedule:
+    - cron: "0 12 * * *"
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  ingest-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Download qa-automation-template allure artifact
+        id: download
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          repo: ${{ vars.SOURCE_REPO || github.repository }}
+          workflow: ${{ vars.SOURCE_WORKFLOW || 'ci.yml' }}
+          branch: ${{ vars.SOURCE_BRANCH || 'main' }}
+          name: ${{ vars.SOURCE_ARTIFACT || 'allure-results' }}
+          path: incoming/allure-results
+          if_no_artifact_found: fail
+
+      - name: Extract normalized summary
+        run: |
+          python scripts/extract_qa_template_summary.py \
+            --allure-dir incoming/allure-results \
+            --output-dir data/projects \
+            --run-id gha-${{ github.run_id }} \
+            --run-url https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }} \
+            --workflow "Update Data And Deploy" \
+            --branch "${{ github.ref_name }}" \
+            --commit-sha "${{ github.sha }}" \
+            --repo-url "https://github.com/${{ vars.SOURCE_REPO || github.repository }}"
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/projects
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: refresh portfolio report data"
+            git push
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

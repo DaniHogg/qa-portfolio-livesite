@@ -1,0 +1,131 @@
+{
+  "$schema_version": "1.0.0",
+  "project": {
+    "id": "qa-automation-template",
+    "name": "QA Automation Template",
+    "frameworks": [
+      "pytest",
+      "selenium",
+      "requests",
+      "allure"
+    ],
+    "repository_url": ""
+  },
+  "latest": {
+    "run_id": "local-2026-05-02-6",
+    "source": {
+      "provider": "github-actions",
+      "workflow": "Local Validation",
+      "branch": "main",
+      "commit_sha": "local-6",
+      "run_url": "https://example.local/runs/local-2026-05-02-6"
+    },
+    "status": "partial",
+    "started_at": "2026-04-20T02:10:14.285000Z",
+    "completed_at": "2026-04-20T02:10:14.331000Z",
+    "duration_seconds": 0,
+    "totals": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "errors": 0
+    },
+    "suites": [
+      {
+        "suite_id": "api-regression",
+        "suite_name": "API Regression",
+        "status": "not-run",
+        "totals": {
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "Extended API coverage; may be workflow_dispatch-gated"
+      },
+      {
+        "suite_id": "api-smoke",
+        "suite_name": "API Smoke",
+        "status": "passed",
+        "totals": {
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "Basic API health checks"
+      },
+      {
+        "suite_id": "unit",
+        "suite_name": "Unit",
+        "status": "not-run",
+        "totals": {
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "Framework-level tests"
+      },
+      {
+        "suite_id": "web-regression",
+        "suite_name": "Web Regression",
+        "status": "not-run",
+        "totals": {
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "UI regression coverage; may be workflow_dispatch-gated"
+      },
+      {
+        "suite_id": "web-smoke",
+        "suite_name": "Web Smoke",
+        "status": "not-run",
+        "totals": {
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "UI smoke coverage; may be workflow_dispatch-gated"
+      }
+    ],
+    "stale_after_days": 7
+  },
+  "history": [
+    {
+      "run_id": "local-2026-05-02-6",
+      "status": "partial",
+      "completed_at": "2026-04-20T02:10:14.331000Z",
+      "run_url": "https://example.local/runs/local-2026-05-02-6"
+    },
+    {
+      "run_id": "local-2026-05-02-5",
+      "status": "partial",
+      "completed_at": "2026-04-20T02:10:14.331000Z",
+      "run_url": "https://example.local/runs/local-2026-05-02-5"
+    },
+    {
+      "run_id": "local-2026-05-02-4",
+      "status": "partial",
+      "completed_at": "2026-04-20T02:10:14.331000Z",
+      "run_url": "https://example.local/runs/local-2026-05-02-4"
+    },
+    {
+      "run_id": "local-2026-05-02-3",
+      "status": "partial",
+      "completed_at": "2026-04-20T02:10:14.331000Z",
+      "run_url": "https://example.local/runs/local-2026-05-02-3"
+    },
+    {
+      "run_id": "local-2026-05-02-2",
+      "status": "partial",
+      "completed_at": "2026-04-20T02:10:14.331000Z",
+      "run_url": "https://example.local/runs/local-2026-05-02-2"
+    }
+  ],
+  "history_limit": 5,
+  "last_refreshed_at": "2026-05-02T03:43:57.758526Z"
+}

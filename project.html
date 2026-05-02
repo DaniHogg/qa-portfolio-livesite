@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Details</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <main class="shell">
+    <a class="back-link" href="index.html">Back to dashboard</a>
+    <header class="hero">
+      <p id="project-kicker" class="kicker">Project</p>
+      <h1 id="project-title">Loading...</h1>
+      <p id="project-summary" class="lede"></p>
+    </header>
+
+    <section class="panel">
+      <h2>Latest Run</h2>
+      <div id="latest-meta" class="meta-grid"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Suite Status</h2>
+      <table class="suite-table">
+        <thead>
+          <tr>
+            <th>Suite</th>
+            <th>Status</th>
+            <th>Passed</th>
+            <th>Failed</th>
+            <th>Skipped</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody id="suite-rows"></tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h2>Latest 5 Runs</h2>
+      <ul id="history-list" class="history-list"></ul>
+    </section>
+  </main>
+  <script src="assets/app.js"></script>
+</body>
+</html>

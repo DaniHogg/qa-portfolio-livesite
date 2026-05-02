@@ -1,0 +1,8 @@
+{
+  "projects": [
+    {
+      "id": "qa-automation-template",
+      "summary": "Flagship pytest framework with API, web, and unit coverage"
+    }
+  ]
+}
