@@ -12,22 +12,13 @@
     "repository_url": "https://github.com/DaniHogg/qa-automation-template"
   },
   "latest": {
-<<<<<<< HEAD
-    "run_id": "local-coverage-audit-3",
-=======
-    "run_id": "gha-25243755495",
->>>>>>> refs/remotes/origin/main
+    "run_id": "gha-25244709985",
     "source": {
       "provider": "github-actions",
       "workflow": "Update Data And Deploy",
       "branch": "main",
-<<<<<<< HEAD
-      "commit_sha": "local-audit-3",
-      "run_url": "https://example.local/runs/local-coverage-audit-3"
-=======
-      "commit_sha": "b0f064f934a731b5e7f79279316044bd69fbc00f",
-      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/25243755495"
->>>>>>> refs/remotes/origin/main
+      "commit_sha": "8ca845ce577e743a2ea967ef00d1431db3c4fe06",
+      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/25244709985"
     },
     "status": "partial",
     "started_at": "2026-04-27T10:39:14.063000Z",
@@ -110,7 +101,7 @@
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Framework-level tests Not run in this cycle."
+        "notes": "Framework-level tests"
       },
       {
         "suite_id": "web-regression",
@@ -141,7 +132,18 @@
   },
   "history": [
     {
-<<<<<<< HEAD
+      "run_id": "gha-25244709985",
+      "status": "partial",
+      "completed_at": "2026-04-27T10:39:14.078000Z",
+      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/25244709985"
+    },
+    {
+      "run_id": "gha-25243755495",
+      "status": "partial",
+      "completed_at": "2026-04-27T10:39:14.078000Z",
+      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/25243755495"
+    },
+    {
       "run_id": "local-coverage-audit-3",
       "status": "partial",
       "completed_at": "2026-04-20T02:10:14.331000Z",
@@ -158,45 +160,8 @@
       "status": "partial",
       "completed_at": "2026-04-20T02:10:14.331000Z",
       "run_url": "https://example.local/runs/local-coverage-audit-1"
-=======
-      "run_id": "gha-25243755495",
-      "status": "partial",
-      "completed_at": "2026-04-27T10:39:14.078000Z",
-      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/25243755495"
->>>>>>> refs/remotes/origin/main
-    },
-    {
-      "run_id": "local-2026-05-02-6",
-      "status": "partial",
-      "completed_at": "2026-04-20T02:10:14.331000Z",
-      "run_url": "https://example.local/runs/local-2026-05-02-6"
-    },
-    {
-      "run_id": "local-2026-05-02-5",
-      "status": "partial",
-      "completed_at": "2026-04-20T02:10:14.331000Z",
-      "run_url": "https://example.local/runs/local-2026-05-02-5"
-<<<<<<< HEAD
     }
   ],
   "history_limit": 5,
-  "last_refreshed_at": "2026-05-02T04:33:04.435229Z"
-=======
-    },
-    {
-      "run_id": "local-2026-05-02-4",
-      "status": "partial",
-      "completed_at": "2026-04-20T02:10:14.331000Z",
-      "run_url": "https://example.local/runs/local-2026-05-02-4"
-    },
-    {
-      "run_id": "local-2026-05-02-3",
-      "status": "partial",
-      "completed_at": "2026-04-20T02:10:14.331000Z",
-      "run_url": "https://example.local/runs/local-2026-05-02-3"
-    }
-  ],
-  "history_limit": 5,
-  "last_refreshed_at": "2026-05-02T04:29:04.452457Z"
->>>>>>> refs/remotes/origin/main
+  "last_refreshed_at": "2026-05-02T05:24:49.250657Z"
 }
