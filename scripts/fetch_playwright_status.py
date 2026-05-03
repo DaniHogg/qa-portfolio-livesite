@@ -17,12 +17,14 @@ Usage (local — reads GITHUB_TOKEN env var if --token not supplied):
 from __future__ import annotations
 
 import argparse
+import io
 import json
 import os
 import re
 import sys
 import urllib.error
 import urllib.request
+import zipfile
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
@@ -57,6 +59,16 @@ def gh_get(path: str, token: str) -> dict:
     except urllib.error.HTTPError as exc:
         print(f"GitHub API error {exc.code} for {url}: {exc.read().decode()[:200]}", file=sys.stderr)
         raise
+
+
+def gh_get_bytes(url: str, token: str) -> bytes:
+    req = urllib.request.Request(url, headers={
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+        **({"Authorization": f"Bearer {token}"} if token else {}),
+    })
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        return resp.read()
 
 
 def conclusion_to_status(conclusion: str | None) -> str:
@@ -117,12 +129,7 @@ def suite_display_name(suite_id: str) -> str:
     return with_spaces.title()
 
 
-def parse_playwright_results(results_json: str) -> tuple[dict, list[dict]] | None:
-    path = Path(results_json)
-    if not path.exists():
-        return None
-
-    data = json.loads(path.read_text(encoding="utf-8"))
+def parse_playwright_results_data(data: dict) -> tuple[dict, list[dict]]:
     top_suites = data.get("suites", [])
     suite_rows: list[dict] = []
     overall = Counter()
@@ -158,6 +165,41 @@ def parse_playwright_results(results_json: str) -> tuple[dict, list[dict]] | Non
         "errors": overall.get("errors", 0),
     }
     return total_dict, suite_rows
+
+
+def parse_playwright_results(results_json: str) -> tuple[dict, list[dict]] | None:
+    path = Path(results_json)
+    if not path.exists():
+        return None
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return parse_playwright_results_data(data)
+
+
+def parse_playwright_artifact(run_id: str, token: str) -> tuple[dict, list[dict]] | None:
+    if not token:
+        return None
+
+    artifacts = gh_get(f"/repos/{REPO}/actions/runs/{run_id}/artifacts", token)
+    for artifact in artifacts.get("artifacts", []):
+        if artifact.get("name") != "playwright-json" or artifact.get("expired"):
+            continue
+
+        archive_url = artifact.get("archive_download_url")
+        if not archive_url:
+            continue
+
+        try:
+            blob = gh_get_bytes(archive_url, token)
+            with zipfile.ZipFile(io.BytesIO(blob)) as zf:
+                for name in zf.namelist():
+                    if name.endswith("results.json"):
+                        data = json.loads(zf.read(name).decode("utf-8"))
+                        return parse_playwright_results_data(data)
+        except Exception as exc:  # best-effort fallback to API-only mode
+            print(f"Warning: failed to parse playwright-json artifact: {exc}", file=sys.stderr)
+            return None
+
+    return None
 
 
 def fallback_totals_and_suites(overall_status: str) -> tuple[dict, list[dict]]:
@@ -280,6 +322,8 @@ def main() -> None:
     history_runs = [h for h in history_pool if str(h.get("id")) != str(latest_run.get("id"))][:args.history_limit]
 
     parsed = parse_playwright_results(args.results_json) if args.results_json else None
+    if not parsed:
+        parsed = parse_playwright_artifact(str(latest_run.get("id")), args.token)
     if parsed:
         totals, suites = parsed
     else:
