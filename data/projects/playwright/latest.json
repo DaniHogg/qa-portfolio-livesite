@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-05-03T05:14:29.077485Z",
+  "last_refreshed_at": "2026-05-03T05:15:35.183370Z",
   "project": {
     "id": "playwright",
     "name": "Playwright Automation",
@@ -11,20 +11,20 @@
     "repository_url": "https://github.com/DaniHogg/playwright-fundamentals"
   },
   "latest": {
-    "run_id": "25270082952",
+    "run_id": "25270647529",
     "source": {
       "provider": "github-actions",
       "workflow": "Playwright Tests",
       "branch": "main",
-      "commit_sha": "f689117a7e1f19e9d27e535fdb42c906777b7352",
-      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/25270082952"
+      "commit_sha": "3d48bc8a43c86e6700f80a2aab6dba0347719a43",
+      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/25270647529"
     },
     "status": "passed",
-    "started_at": "2026-05-03T04:42:03Z",
-    "completed_at": "2026-05-03T04:43:25Z",
-    "duration_seconds": 82,
+    "started_at": "2026-05-03T05:14:11Z",
+    "completed_at": "2026-05-03T05:15:24Z",
+    "duration_seconds": 73,
     "totals": {
-      "passed": 0,
+      "passed": 29,
       "failed": 0,
       "skipped": 0,
       "errors": 0
@@ -35,148 +35,154 @@
         "suite_name": "Accessibility",
         "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 2,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+        "notes": "Counts derived from Playwright JSON report artifact."
       },
       {
         "suite_id": "advanced",
         "suite_name": "Advanced",
         "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 2,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+        "notes": "Counts derived from Playwright JSON report artifact."
       },
       {
         "suite_id": "auth",
         "suite_name": "Auth",
         "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 2,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+        "notes": "Counts derived from Playwright JSON report artifact."
       },
       {
         "suite_id": "basic",
         "suite_name": "Basic",
         "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 2,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+        "notes": "Counts derived from Playwright JSON report artifact."
       },
       {
         "suite_id": "BasicSiteTest",
         "suite_name": "Basic Site Test",
         "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 4,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+        "notes": "Counts derived from Playwright JSON report artifact."
       },
       {
         "suite_id": "content_interaction",
         "suite_name": "Content Interaction",
         "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 2,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+        "notes": "Counts derived from Playwright JSON report artifact."
       },
       {
         "suite_id": "error_handling",
         "suite_name": "Error Handling",
         "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 2,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+        "notes": "Counts derived from Playwright JSON report artifact."
       },
       {
         "suite_id": "forms",
         "suite_name": "Forms",
         "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 2,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+        "notes": "Counts derived from Playwright JSON report artifact."
       },
       {
         "suite_id": "mediawiki_features",
         "suite_name": "Mediawiki Features",
         "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 2,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+        "notes": "Counts derived from Playwright JSON report artifact."
       },
       {
         "suite_id": "navigation",
         "suite_name": "Navigation",
         "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 5,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+        "notes": "Counts derived from Playwright JSON report artifact."
       },
       {
         "suite_id": "performance",
         "suite_name": "Performance",
         "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 2,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+        "notes": "Counts derived from Playwright JSON report artifact."
       },
       {
         "suite_id": "search_results",
         "suite_name": "Search Results",
         "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 2,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+        "notes": "Counts derived from Playwright JSON report artifact."
       }
     ]
   },
   "history": [
+    {
+      "run_id": "25270082952",
+      "status": "passed",
+      "completed_at": "2026-05-03T04:43:25Z",
+      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/25270082952"
+    },
     {
       "run_id": "25269987077",
       "status": "passed",
@@ -200,12 +206,6 @@
       "status": "failed",
       "completed_at": "2026-04-29T11:14:15Z",
       "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/25105636528"
-    },
-    {
-      "run_id": "24990112188",
-      "status": "failed",
-      "completed_at": "2026-04-27T10:35:44Z",
-      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/24990112188"
     }
   ]
 }
