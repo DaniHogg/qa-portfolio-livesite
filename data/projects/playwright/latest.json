@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-05-03T04:16:13.519603Z",
+  "last_refreshed_at": "2026-05-03T04:44:20.571481Z",
   "project": {
     "id": "playwright",
     "name": "Playwright Automation",
@@ -11,18 +11,18 @@
     "repository_url": "https://github.com/DaniHogg/playwright-fundamentals"
   },
   "latest": {
-    "run_id": "25105636528",
+    "run_id": "25270082952",
     "source": {
       "provider": "github-actions",
       "workflow": "Playwright Tests",
       "branch": "main",
-      "commit_sha": "6fba5835d62682b4f958f56f01a14bc4d4fd3749",
-      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/25105636528"
+      "commit_sha": "f689117a7e1f19e9d27e535fdb42c906777b7352",
+      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/25270082952"
     },
-    "status": "failed",
-    "started_at": "2026-04-29T11:13:53Z",
-    "completed_at": "2026-04-29T11:14:15Z",
-    "duration_seconds": 22,
+    "status": "passed",
+    "started_at": "2026-05-03T04:42:03Z",
+    "completed_at": "2026-05-03T04:43:25Z",
+    "duration_seconds": 82,
     "totals": {
       "passed": 0,
       "failed": 0,
@@ -33,7 +33,7 @@
       {
         "suite_id": "basic",
         "suite_name": "Basic",
-        "status": "failed",
+        "status": "passed",
         "totals": {
           "passed": 0,
           "failed": 0,
@@ -45,7 +45,7 @@
       {
         "suite_id": "navigation",
         "suite_name": "Navigation",
-        "status": "failed",
+        "status": "passed",
         "totals": {
           "passed": 0,
           "failed": 0,
@@ -57,7 +57,7 @@
       {
         "suite_id": "forms",
         "suite_name": "Forms",
-        "status": "failed",
+        "status": "passed",
         "totals": {
           "passed": 0,
           "failed": 0,
@@ -69,7 +69,7 @@
       {
         "suite_id": "auth",
         "suite_name": "Auth",
-        "status": "failed",
+        "status": "passed",
         "totals": {
           "passed": 0,
           "failed": 0,
@@ -81,7 +81,7 @@
       {
         "suite_id": "accessibility",
         "suite_name": "Accessibility",
-        "status": "failed",
+        "status": "passed",
         "totals": {
           "passed": 0,
           "failed": 0,
@@ -93,7 +93,7 @@
       {
         "suite_id": "content_interaction",
         "suite_name": "Content Interaction",
-        "status": "failed",
+        "status": "passed",
         "totals": {
           "passed": 0,
           "failed": 0,
@@ -105,7 +105,7 @@
       {
         "suite_id": "error_handling",
         "suite_name": "Error Handling",
-        "status": "failed",
+        "status": "passed",
         "totals": {
           "passed": 0,
           "failed": 0,
@@ -117,7 +117,7 @@
       {
         "suite_id": "advanced",
         "suite_name": "Advanced",
-        "status": "failed",
+        "status": "passed",
         "totals": {
           "passed": 0,
           "failed": 0,
@@ -129,7 +129,7 @@
       {
         "suite_id": "mediawiki_features",
         "suite_name": "Mediawiki Features",
-        "status": "failed",
+        "status": "passed",
         "totals": {
           "passed": 0,
           "failed": 0,
@@ -141,7 +141,7 @@
       {
         "suite_id": "performance",
         "suite_name": "Performance",
-        "status": "failed",
+        "status": "passed",
         "totals": {
           "passed": 0,
           "failed": 0,
@@ -153,7 +153,7 @@
       {
         "suite_id": "search_results",
         "suite_name": "Search Results",
-        "status": "failed",
+        "status": "passed",
         "totals": {
           "passed": 0,
           "failed": 0,
@@ -165,7 +165,7 @@
       {
         "suite_id": "BasicSiteTest",
         "suite_name": "Basicsitetest",
-        "status": "failed",
+        "status": "passed",
         "totals": {
           "passed": 0,
           "failed": 0,
@@ -178,34 +178,34 @@
   },
   "history": [
     {
+      "run_id": "25269987077",
+      "status": "passed",
+      "completed_at": "2026-05-03T04:37:08Z",
+      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/25269987077"
+    },
+    {
+      "run_id": "25269941129",
+      "status": "failed",
+      "completed_at": "2026-05-03T04:34:40Z",
+      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/25269941129"
+    },
+    {
+      "run_id": "25269613248",
+      "status": "failed",
+      "completed_at": "2026-05-03T04:20:49Z",
+      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/25269613248"
+    },
+    {
+      "run_id": "25105636528",
+      "status": "failed",
+      "completed_at": "2026-04-29T11:14:15Z",
+      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/25105636528"
+    },
+    {
       "run_id": "24990112188",
       "status": "failed",
       "completed_at": "2026-04-27T10:35:44Z",
       "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/24990112188"
-    },
-    {
-      "run_id": "24656381818",
-      "status": "failed",
-      "completed_at": "2026-04-20T08:28:23Z",
-      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/24656381818"
-    },
-    {
-      "run_id": "24656095427",
-      "status": "failed",
-      "completed_at": "2026-04-20T08:21:26Z",
-      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/24656095427"
-    },
-    {
-      "run_id": "24656067191",
-      "status": "failed",
-      "completed_at": "2026-04-20T08:20:43Z",
-      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/24656067191"
-    },
-    {
-      "run_id": "24341096893",
-      "status": "failed",
-      "completed_at": "2026-04-13T11:33:06Z",
-      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/24341096893"
     }
   ]
 }
