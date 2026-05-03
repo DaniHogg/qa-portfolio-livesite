@@ -71,13 +71,30 @@ def gh_get(path: str, token: str) -> dict:
 
 
 def gh_get_bytes(url: str, token: str) -> bytes:
+    # GitHub artifact download returns a 302 redirect to Azure Blob Storage.
+    # Azure rejects requests that include an Authorization header, so we must
+    # capture the redirect Location and fetch the blob URL without auth.
+    class _NoRedirect(urllib.request.HTTPRedirectHandler):
+        def redirect_request(self, req, fp, code, msg, headers, newurl):
+            return None
+
+    opener = urllib.request.build_opener(_NoRedirect)
     req = urllib.request.Request(url, headers={
         "Accept": "application/vnd.github+json",
         "X-GitHub-Api-Version": "2022-11-28",
         **({"Authorization": f"Bearer {token}"} if token else {}),
     })
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return resp.read()
+    try:
+        with opener.open(req, timeout=20) as resp:
+            return resp.read()
+    except urllib.error.HTTPError as exc:
+        if exc.code in (301, 302, 303, 307, 308):
+            blob_url = exc.headers.get("Location")
+            if not blob_url:
+                raise
+            with urllib.request.urlopen(blob_url, timeout=60) as resp:
+                return resp.read()
+        raise
 
 
 def conclusion_to_status(conclusion: str | None) -> str:
