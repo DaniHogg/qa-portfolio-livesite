@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-05-03T06:02:12.114806Z",
+  "last_refreshed_at": "2026-05-03T06:08:13.885615Z",
   "project": {
     "id": "selenium",
     "name": "Selenium Automation",
@@ -25,71 +25,71 @@
     "completed_at": "2026-05-03T06:01:57Z",
     "duration_seconds": 49,
     "totals": {
-      "passed": 21,
+      "passed": 0,
       "failed": 0,
       "skipped": 0,
       "errors": 0
     },
     "suites": [
       {
-        "suite_id": "test_dashboard",
-        "suite_name": "Dashboard",
+        "suite_id": "test_smoke",
+        "suite_name": "Smoke",
         "status": "passed",
         "totals": {
-          "passed": 4,
+          "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Counts derived from pytest-json-report artifact."
-      },
-      {
-        "suite_id": "test_home_content",
-        "suite_name": "Home Content",
-        "status": "passed",
-        "totals": {
-          "passed": 4,
-          "failed": 0,
-          "skipped": 0,
-          "errors": 0
-        },
-        "notes": "Counts derived from pytest-json-report artifact."
+        "notes": "Per-test counts unavailable: no Selenium JSON artifact was provided for this run."
       },
       {
         "suite_id": "test_navigation",
         "suite_name": "Navigation",
         "status": "passed",
         "totals": {
-          "passed": 5,
+          "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Counts derived from pytest-json-report artifact."
+        "notes": "Per-test counts unavailable: no Selenium JSON artifact was provided for this run."
+      },
+      {
+        "suite_id": "test_home_content",
+        "suite_name": "Home Content",
+        "status": "passed",
+        "totals": {
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "Per-test counts unavailable: no Selenium JSON artifact was provided for this run."
       },
       {
         "suite_id": "test_portfolio",
         "suite_name": "Portfolio",
         "status": "passed",
         "totals": {
-          "passed": 4,
+          "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Counts derived from pytest-json-report artifact."
+        "notes": "Per-test counts unavailable: no Selenium JSON artifact was provided for this run."
       },
       {
-        "suite_id": "test_smoke",
-        "suite_name": "Smoke",
+        "suite_id": "test_dashboard",
+        "suite_name": "Dashboard",
         "status": "passed",
         "totals": {
-          "passed": 4,
+          "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Counts derived from pytest-json-report artifact."
+        "notes": "Per-test counts unavailable: no Selenium JSON artifact was provided for this run."
       }
     ]
   },
