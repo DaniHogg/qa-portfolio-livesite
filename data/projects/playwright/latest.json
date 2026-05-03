@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-05-03T04:44:20.571481Z",
+  "last_refreshed_at": "2026-05-03T05:14:29.077485Z",
   "project": {
     "id": "playwright",
     "name": "Playwright Automation",
@@ -31,54 +31,6 @@
     },
     "suites": [
       {
-        "suite_id": "basic",
-        "suite_name": "Basic",
-        "status": "passed",
-        "totals": {
-          "passed": 0,
-          "failed": 0,
-          "skipped": 0,
-          "errors": 0
-        },
-        "notes": "Per-test counts available in the linked Playwright HTML report."
-      },
-      {
-        "suite_id": "navigation",
-        "suite_name": "Navigation",
-        "status": "passed",
-        "totals": {
-          "passed": 0,
-          "failed": 0,
-          "skipped": 0,
-          "errors": 0
-        },
-        "notes": "Per-test counts available in the linked Playwright HTML report."
-      },
-      {
-        "suite_id": "forms",
-        "suite_name": "Forms",
-        "status": "passed",
-        "totals": {
-          "passed": 0,
-          "failed": 0,
-          "skipped": 0,
-          "errors": 0
-        },
-        "notes": "Per-test counts available in the linked Playwright HTML report."
-      },
-      {
-        "suite_id": "auth",
-        "suite_name": "Auth",
-        "status": "passed",
-        "totals": {
-          "passed": 0,
-          "failed": 0,
-          "skipped": 0,
-          "errors": 0
-        },
-        "notes": "Per-test counts available in the linked Playwright HTML report."
-      },
-      {
         "suite_id": "accessibility",
         "suite_name": "Accessibility",
         "status": "passed",
@@ -88,31 +40,7 @@
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts available in the linked Playwright HTML report."
-      },
-      {
-        "suite_id": "content_interaction",
-        "suite_name": "Content Interaction",
-        "status": "passed",
-        "totals": {
-          "passed": 0,
-          "failed": 0,
-          "skipped": 0,
-          "errors": 0
-        },
-        "notes": "Per-test counts available in the linked Playwright HTML report."
-      },
-      {
-        "suite_id": "error_handling",
-        "suite_name": "Error Handling",
-        "status": "passed",
-        "totals": {
-          "passed": 0,
-          "failed": 0,
-          "skipped": 0,
-          "errors": 0
-        },
-        "notes": "Per-test counts available in the linked Playwright HTML report."
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
       },
       {
         "suite_id": "advanced",
@@ -124,7 +52,79 @@
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts available in the linked Playwright HTML report."
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+      },
+      {
+        "suite_id": "auth",
+        "suite_name": "Auth",
+        "status": "passed",
+        "totals": {
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+      },
+      {
+        "suite_id": "basic",
+        "suite_name": "Basic",
+        "status": "passed",
+        "totals": {
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+      },
+      {
+        "suite_id": "BasicSiteTest",
+        "suite_name": "Basic Site Test",
+        "status": "passed",
+        "totals": {
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+      },
+      {
+        "suite_id": "content_interaction",
+        "suite_name": "Content Interaction",
+        "status": "passed",
+        "totals": {
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+      },
+      {
+        "suite_id": "error_handling",
+        "suite_name": "Error Handling",
+        "status": "passed",
+        "totals": {
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+      },
+      {
+        "suite_id": "forms",
+        "suite_name": "Forms",
+        "status": "passed",
+        "totals": {
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
       },
       {
         "suite_id": "mediawiki_features",
@@ -136,7 +136,19 @@
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts available in the linked Playwright HTML report."
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+      },
+      {
+        "suite_id": "navigation",
+        "suite_name": "Navigation",
+        "status": "passed",
+        "totals": {
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
       },
       {
         "suite_id": "performance",
@@ -148,7 +160,7 @@
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts available in the linked Playwright HTML report."
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
       },
       {
         "suite_id": "search_results",
@@ -160,19 +172,7 @@
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts available in the linked Playwright HTML report."
-      },
-      {
-        "suite_id": "BasicSiteTest",
-        "suite_name": "Basicsitetest",
-        "status": "passed",
-        "totals": {
-          "passed": 0,
-          "failed": 0,
-          "skipped": 0,
-          "errors": 0
-        },
-        "notes": "Per-test counts available in the linked Playwright HTML report."
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
       }
     ]
   },
