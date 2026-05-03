@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-05-03T05:59:07.904236Z",
+  "last_refreshed_at": "2026-05-03T06:00:45.061667Z",
   "project": {
     "id": "selenium",
     "name": "Selenium Automation",
@@ -12,88 +12,100 @@
     "repository_url": "https://github.com/DaniHogg/Selenium"
   },
   "latest": {
-    "run_id": "25105707543",
+    "run_id": "25271432167",
     "source": {
       "provider": "github-actions",
       "workflow": "Selenium CI",
       "branch": "main",
-      "commit_sha": "f45f6702984ac4ff3c52f593b5a6c0794963a10a",
-      "run_url": "https://github.com/DaniHogg/Selenium/actions/runs/25105707543"
+      "commit_sha": "9d8608e3875762e0eecb17f8a361961952234047",
+      "run_url": "https://github.com/DaniHogg/Selenium/actions/runs/25271432167"
     },
     "status": "failed",
-    "started_at": "2026-04-29T11:15:32Z",
-    "completed_at": "2026-04-29T11:16:06Z",
-    "duration_seconds": 34,
+    "started_at": "2026-05-03T05:59:36Z",
+    "completed_at": "2026-05-03T06:00:32Z",
+    "duration_seconds": 56,
     "totals": {
-      "passed": 0,
-      "failed": 0,
+      "passed": 20,
+      "failed": 1,
       "skipped": 0,
       "errors": 0
     },
     "suites": [
       {
-        "suite_id": "test_smoke",
-        "suite_name": "Smoke",
-        "status": "failed",
+        "suite_id": "test_dashboard",
+        "suite_name": "Dashboard",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 4,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts unavailable: no Selenium JSON artifact was provided for this run."
-      },
-      {
-        "suite_id": "test_navigation",
-        "suite_name": "Navigation",
-        "status": "failed",
-        "totals": {
-          "passed": 0,
-          "failed": 0,
-          "skipped": 0,
-          "errors": 0
-        },
-        "notes": "Per-test counts unavailable: no Selenium JSON artifact was provided for this run."
+        "notes": "Counts derived from pytest-json-report artifact."
       },
       {
         "suite_id": "test_home_content",
         "suite_name": "Home Content",
         "status": "failed",
         "totals": {
-          "passed": 0,
+          "passed": 3,
+          "failed": 1,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "Counts derived from pytest-json-report artifact."
+      },
+      {
+        "suite_id": "test_navigation",
+        "suite_name": "Navigation",
+        "status": "passed",
+        "totals": {
+          "passed": 5,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts unavailable: no Selenium JSON artifact was provided for this run."
+        "notes": "Counts derived from pytest-json-report artifact."
       },
       {
         "suite_id": "test_portfolio",
         "suite_name": "Portfolio",
-        "status": "failed",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 4,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts unavailable: no Selenium JSON artifact was provided for this run."
+        "notes": "Counts derived from pytest-json-report artifact."
       },
       {
-        "suite_id": "test_dashboard",
-        "suite_name": "Dashboard",
-        "status": "failed",
+        "suite_id": "test_smoke",
+        "suite_name": "Smoke",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 4,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts unavailable: no Selenium JSON artifact was provided for this run."
+        "notes": "Counts derived from pytest-json-report artifact."
       }
     ]
   },
   "history": [
+    {
+      "run_id": "25271415983",
+      "status": "failed",
+      "completed_at": "2026-05-03T05:59:36Z",
+      "run_url": "https://github.com/DaniHogg/Selenium/actions/runs/25271415983"
+    },
+    {
+      "run_id": "25105707543",
+      "status": "failed",
+      "completed_at": "2026-04-29T11:16:06Z",
+      "run_url": "https://github.com/DaniHogg/Selenium/actions/runs/25105707543"
+    },
     {
       "run_id": "24655608269",
       "status": "failed",
