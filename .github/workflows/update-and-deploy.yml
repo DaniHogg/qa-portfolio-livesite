@@ -36,7 +36,7 @@ jobs:
           python-version: "3.11"
 
       - name: Download dispatched allure artifact by run id
-        if: ${{ github.event_name == 'repository_dispatch' }}
+        if: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.source_artifact != '' }}
         id: download-dispatch
         uses: dawidd6/action-download-artifact@v6
         with:
@@ -62,7 +62,7 @@ jobs:
           if_no_artifact_found: fail
 
       - name: Extract normalized summary
-        if: ${{ github.event_name == 'repository_dispatch' || (vars.SOURCE_REPO != '' && vars.SOURCE_WORKFLOW != '') }}
+        if: ${{ (github.event_name == 'repository_dispatch' && github.event.client_payload.source_artifact != '') || (github.event_name != 'repository_dispatch' && vars.SOURCE_REPO != '' && vars.SOURCE_WORKFLOW != '') }}
         run: |
           python scripts/extract_qa_template_summary.py \
             --allure-dir incoming/allure-results \
