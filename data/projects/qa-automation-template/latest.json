@@ -12,21 +12,21 @@
     "repository_url": "https://github.com/DaniHogg/qa-automation-template"
   },
   "latest": {
-    "run_id": "25271581613",
+    "run_id": "gha-25271783419",
     "source": {
       "provider": "github-actions",
       "workflow": "Update Data And Deploy",
       "branch": "main",
-      "commit_sha": "2ef98589053764def94b5c594766d9407a13fe9e",
-      "run_url": "https://github.com/DaniHogg/qa-automation-template/actions/runs/25271581613"
+      "commit_sha": "c177b6468dd8fcee578239eac9f948021eead4e6",
+      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/25271783419"
     },
-    "status": "failed",
-    "started_at": "2026-05-03T06:07:18.933000Z",
-    "completed_at": "2026-05-03T06:07:34.821000Z",
-    "duration_seconds": 15,
+    "status": "partial",
+    "started_at": "2026-05-02T06:19:07.759000Z",
+    "completed_at": "2026-05-02T06:19:16.271000Z",
+    "duration_seconds": 8,
     "totals": {
-      "passed": 16,
-      "failed": 2,
+      "passed": 18,
+      "failed": 0,
       "skipped": 0,
       "errors": 0
     },
@@ -118,10 +118,10 @@
       {
         "suite_id": "web-smoke",
         "suite_name": "Web Smoke",
-        "status": "failed",
+        "status": "passed",
         "totals": {
-          "passed": 0,
-          "failed": 2,
+          "passed": 2,
+          "failed": 0,
           "skipped": 0,
           "errors": 0
         },
@@ -136,6 +136,12 @@
       "status": "failed",
       "completed_at": "2026-05-03T06:07:34.821000Z",
       "run_url": "https://github.com/DaniHogg/qa-automation-template/actions/runs/25271581613"
+    },
+    {
+      "run_id": "gha-25271783419",
+      "status": "partial",
+      "completed_at": "2026-05-02T06:19:16.271000Z",
+      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/25271783419"
     },
     {
       "run_id": "gha-25271420151",
@@ -154,14 +160,8 @@
       "status": "partial",
       "completed_at": "2026-05-02T06:19:16.271000Z",
       "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/25270649469"
-    },
-    {
-      "run_id": "gha-25270118486",
-      "status": "partial",
-      "completed_at": "2026-05-02T06:19:16.271000Z",
-      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/25270118486"
     }
   ],
   "history_limit": 5,
-  "last_refreshed_at": "2026-05-03T06:08:11.106916Z"
+  "last_refreshed_at": "2026-05-03T06:17:36.308266Z"
 }
