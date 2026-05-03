@@ -4,7 +4,7 @@
       "name": "QA Automation Template",
       "tech_stack": "Python, Pytest, Selenium, Requests, Allure",
       "what_tested": "API endpoints, web UI flows, and framework-level unit coverage within a single structured project.",
-      "why_it_matters": "Demonstrates how a production-ready framework is designed — with clear separation of concerns, reusable fixtures, and CI-linked reporting that makes quality evidence easy to evaluate.",
+      "why_it_matters": "Demonstrates how a production-ready framework is designed \u2014 with clear separation of concerns, reusable fixtures, and CI-linked reporting that makes quality evidence easy to evaluate.",
       "application": "Reusable framework architecture with API, web UI, and unit layers in one portfolio-ready project.",
       "links": [
         {
@@ -21,8 +21,8 @@
     {
       "name": "Playwright Automation",
       "tech_stack": "Playwright (JavaScript), Node.js, GitHub Actions",
-      "what_tested": "Browser-based UI flows across 12 focused spec files: forms, navigation, auth, accessibility, content interaction, error handling, performance, and search — each with a single clear responsibility.",
-      "why_it_matters": "Demonstrates modern Playwright patterns — role- and text-based locators, built-in auto-waiting, and parallel execution — in a suite that stays readable and low-flakiness without a heavyweight framework layer.",
+      "what_tested": "Browser-based UI flows across 12 focused spec files: forms, navigation, auth, accessibility, content interaction, error handling, performance, and search \u2014 each with a single clear responsibility.",
+      "why_it_matters": "Demonstrates modern Playwright patterns \u2014 role- and text-based locators, built-in auto-waiting, and parallel execution \u2014 in a suite that stays readable and low-flakiness without a heavyweight framework layer.",
       "application": "Fast browser automation for smoke and feature coverage with modern locator and reporting patterns.",
       "links": [
         {
@@ -42,7 +42,18 @@
       "tech_stack": "Selenium WebDriver, Python, Pytest",
       "what_tested": "Cross-browser UI coverage including page interactions and regression flows using maintainable page object patterns.",
       "why_it_matters": "Demonstrates established cross-browser automation discipline with clean abstraction between test logic and page interaction.",
-      "application": "Classic cross-browser UI coverage using maintainable page objects and regression workflows."
+      "application": "Classic cross-browser UI coverage using maintainable page objects and regression workflows.",
+      "id": "selenium",
+      "links": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/DaniHogg/Selenium"
+        },
+        {
+          "label": "CI Runs",
+          "url": "https://github.com/DaniHogg/Selenium/actions/workflows/selenium-ci.yml"
+        }
+      ]
     },
     {
       "name": "Appium Mobile Automation",
@@ -55,7 +66,7 @@
       "name": "API Testing with Pytest",
       "tech_stack": "Python, Pytest, Requests",
       "what_tested": "REST API contracts, response schemas, status handling, authentication, and error paths.",
-      "why_it_matters": "Validates that APIs behave correctly at the contract level before UI or integration tests — catching defects early and cheaply.",
+      "why_it_matters": "Validates that APIs behave correctly at the contract level before UI or integration tests \u2014 catching defects early and cheaply.",
       "application": "API-level validation for contracts, status handling, and business-critical response assertions."
     },
     {
@@ -74,4 +85,3 @@
     }
   ]
 }
-
