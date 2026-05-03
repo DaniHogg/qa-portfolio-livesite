@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-05-03T05:23:21.979864Z",
+  "last_refreshed_at": "2026-05-03T05:59:07.364086Z",
   "project": {
     "id": "playwright",
     "name": "Playwright Automation",
@@ -24,7 +24,7 @@
     "completed_at": "2026-05-03T05:23:08Z",
     "duration_seconds": 81,
     "totals": {
-      "passed": 29,
+      "passed": 0,
       "failed": 0,
       "skipped": 0,
       "errors": 0
@@ -35,144 +35,144 @@
         "suite_name": "Accessibility",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Counts derived from Playwright JSON report artifact."
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
       },
       {
         "suite_id": "advanced",
         "suite_name": "Advanced",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Counts derived from Playwright JSON report artifact."
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
       },
       {
         "suite_id": "auth",
         "suite_name": "Auth",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Counts derived from Playwright JSON report artifact."
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
       },
       {
         "suite_id": "basic",
         "suite_name": "Basic",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Counts derived from Playwright JSON report artifact."
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
       },
       {
         "suite_id": "BasicSiteTest",
         "suite_name": "Basic Site Test",
         "status": "passed",
         "totals": {
-          "passed": 4,
+          "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Counts derived from Playwright JSON report artifact."
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
       },
       {
         "suite_id": "content_interaction",
         "suite_name": "Content Interaction",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Counts derived from Playwright JSON report artifact."
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
       },
       {
         "suite_id": "error_handling",
         "suite_name": "Error Handling",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Counts derived from Playwright JSON report artifact."
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
       },
       {
         "suite_id": "forms",
         "suite_name": "Forms",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Counts derived from Playwright JSON report artifact."
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
       },
       {
         "suite_id": "mediawiki_features",
         "suite_name": "Mediawiki Features",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Counts derived from Playwright JSON report artifact."
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
       },
       {
         "suite_id": "navigation",
         "suite_name": "Navigation",
         "status": "passed",
         "totals": {
-          "passed": 5,
+          "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Counts derived from Playwright JSON report artifact."
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
       },
       {
         "suite_id": "performance",
         "suite_name": "Performance",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Counts derived from Playwright JSON report artifact."
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
       },
       {
         "suite_id": "search_results",
         "suite_name": "Search Results",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Counts derived from Playwright JSON report artifact."
+        "notes": "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
       }
     ]
   },
