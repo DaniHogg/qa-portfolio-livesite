@@ -19,9 +19,11 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -29,30 +31,16 @@ REPO = "DaniHogg/playwright-fundamentals"
 WORKFLOW = "tests.yml"
 BRANCH = "main"
 
-# Spec files derived from test-js/ directory.  Listed here so the dashboard
-# can show per-suite rows even when the API only returns overall pass/fail.
-SPEC_FILES = [
-    "basic",
-    "navigation",
-    "forms",
-    "auth",
-    "accessibility",
-    "content_interaction",
-    "error_handling",
-    "advanced",
-    "mediawiki_features",
-    "performance",
-    "search_results",
-    "BasicSiteTest",
-]
-
-
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Fetch Playwright CI status from GitHub API")
     parser.add_argument("--output-dir", default="data/projects")
     parser.add_argument("--token", default=os.environ.get("SOURCE_REPO_TOKEN") or os.environ.get("GITHUB_TOKEN", ""))
     parser.add_argument("--branch", default=BRANCH)
     parser.add_argument("--history-limit", type=int, default=5)
+    parser.add_argument("--run-id", default="")
+    parser.add_argument("--run-url", default="")
+    parser.add_argument("--commit-sha", default="")
+    parser.add_argument("--results-json", default="")
     return parser.parse_args()
 
 
@@ -80,23 +68,126 @@ def iso_now() -> str:
     return datetime.now(tz=timezone.utc).isoformat().replace("+00:00", "Z")
 
 
-def build_suite_rows(overall_status: str) -> list[dict]:
-    """Return a stub row per spec file.  Pass/fail counts are not available
-    from the API alone; they show as 0 with a note directing reviewers to
-    the linked CI run for full detail."""
-    rows = []
-    for spec in SPEC_FILES:
-        rows.append({
-            "suite_id": spec,
-            "suite_name": spec.replace("_", " ").title(),
+def status_from_totals(totals: dict) -> str:
+    if totals.get("failed", 0) > 0 or totals.get("errors", 0) > 0:
+        return "failed"
+    if totals.get("passed", 0) > 0:
+        return "passed"
+    if totals.get("skipped", 0) > 0:
+        return "skipped"
+    return "unknown"
+
+
+def iter_specs(suite_node: dict):
+    for spec in suite_node.get("specs", []):
+        yield spec
+    for child in suite_node.get("suites", []):
+        yield from iter_specs(child)
+
+
+def count_test_result(test: dict) -> str:
+    # A single test can have retries in results[]; the final result is authoritative.
+    results = test.get("results", [])
+    if results:
+        final = (results[-1].get("status") or "").lower()
+    else:
+        final = (test.get("status") or "").lower()
+
+    if final == "passed":
+        return "passed"
+    if final in {"skipped"}:
+        return "skipped"
+    if final in {"failed"}:
+        return "failed"
+    if final in {"timedout", "interrupted"}:
+        return "errors"
+    return "errors"
+
+
+def normalize_suite_id(suite_file: str) -> str:
+    stem = Path(suite_file).stem
+    if stem.endswith(".spec"):
+        return stem[: -len(".spec")]
+    return stem
+
+
+def suite_display_name(suite_id: str) -> str:
+    with_spaces = suite_id.replace("_", " ")
+    with_spaces = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", with_spaces)
+    return with_spaces.title()
+
+
+def parse_playwright_results(results_json: str) -> tuple[dict, list[dict]] | None:
+    path = Path(results_json)
+    if not path.exists():
+        return None
+
+    data = json.loads(path.read_text(encoding="utf-8"))
+    top_suites = data.get("suites", [])
+    suite_rows: list[dict] = []
+    overall = Counter()
+
+    for suite in top_suites:
+        suite_file = suite.get("file") or suite.get("title") or "suite"
+        suite_id = normalize_suite_id(suite_file)
+        counts = Counter()
+
+        for spec in iter_specs(suite):
+            for test in spec.get("tests", []):
+                counts[count_test_result(test)] += 1
+
+        totals = {
+            "passed": counts.get("passed", 0),
+            "failed": counts.get("failed", 0),
+            "skipped": counts.get("skipped", 0),
+            "errors": counts.get("errors", 0),
+        }
+        overall.update(totals)
+        suite_rows.append({
+            "suite_id": suite_id,
+            "suite_name": suite_display_name(suite_id),
+            "status": status_from_totals(totals),
+            "totals": totals,
+            "notes": "Counts derived from Playwright JSON report artifact.",
+        })
+
+    total_dict = {
+        "passed": overall.get("passed", 0),
+        "failed": overall.get("failed", 0),
+        "skipped": overall.get("skipped", 0),
+        "errors": overall.get("errors", 0),
+    }
+    return total_dict, suite_rows
+
+
+def fallback_totals_and_suites(overall_status: str) -> tuple[dict, list[dict]]:
+    note = "Per-test counts unavailable: no Playwright JSON artifact was provided for this run."
+    suites = []
+    for suite_id in [
+        "accessibility",
+        "advanced",
+        "auth",
+        "basic",
+        "BasicSiteTest",
+        "content_interaction",
+        "error_handling",
+        "forms",
+        "mediawiki_features",
+        "navigation",
+        "performance",
+        "search_results",
+    ]:
+        suites.append({
+            "suite_id": suite_id,
+            "suite_name": suite_display_name(suite_id),
             "status": overall_status if overall_status in ("passed", "failed") else "unknown",
             "totals": {"passed": 0, "failed": 0, "skipped": 0, "errors": 0},
-            "notes": "Per-test counts available in the linked Playwright HTML report.",
+            "notes": note,
         })
-    return rows
+    return ({"passed": 0, "failed": 0, "skipped": 0, "errors": 0}, suites)
 
 
-def build_latest_json(run: dict, history_runs: list[dict]) -> dict:
+def build_latest_json(run: dict, history_runs: list[dict], totals: dict, suites: list[dict]) -> dict:
     conclusion = run.get("conclusion")
     status = conclusion_to_status(conclusion)
     started = run.get("run_started_at") or run.get("created_at")
@@ -148,10 +239,8 @@ def build_latest_json(run: dict, history_runs: list[dict]) -> dict:
             "started_at": started,
             "completed_at": completed,
             "duration_seconds": duration_seconds,
-            # Per-test totals are not available from the API without downloading
-            # Playwright JSON report artifacts.  The run status is authoritative.
-            "totals": {"passed": 0, "failed": 0, "skipped": 0, "errors": 0},
-            "suites": build_suite_rows(status),
+            "totals": totals,
+            "suites": suites,
         },
         "history": history,
     }
@@ -166,20 +255,37 @@ def main() -> None:
             file=sys.stderr,
         )
 
-    runs_data = gh_get(
+    history_data = gh_get(
         f"/repos/{REPO}/actions/workflows/{WORKFLOW}/runs"
-        f"?branch={args.branch}&per_page={args.history_limit + 1}&status=completed",
+        f"?branch={args.branch}&per_page={args.history_limit + 3}&status=completed",
         args.token,
     )
-    runs = runs_data.get("workflow_runs", [])
-    if not runs:
+    history_pool = history_data.get("workflow_runs", [])
+    if not history_pool:
         print("No completed workflow runs found.", file=sys.stderr)
         sys.exit(1)
 
-    latest_run = runs[0]
-    history_runs = runs[1:]
+    if args.run_id:
+        latest_run = gh_get(f"/repos/{REPO}/actions/runs/{args.run_id}", args.token)
+    else:
+        latest_run = history_pool[0]
 
-    output = build_latest_json(latest_run, history_runs)
+    if args.run_url:
+        latest_run["html_url"] = args.run_url
+    if args.commit_sha:
+        latest_run["head_sha"] = args.commit_sha
+    if args.branch:
+        latest_run["head_branch"] = args.branch
+
+    history_runs = [h for h in history_pool if str(h.get("id")) != str(latest_run.get("id"))][:args.history_limit]
+
+    parsed = parse_playwright_results(args.results_json) if args.results_json else None
+    if parsed:
+        totals, suites = parsed
+    else:
+        totals, suites = fallback_totals_and_suites(conclusion_to_status(latest_run.get("conclusion")))
+
+    output = build_latest_json(latest_run, history_runs, totals, suites)
 
     out_path = Path(args.output_dir) / "playwright" / "latest.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
