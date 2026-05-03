@@ -139,6 +139,45 @@ async function renderProject() {
   }
 }
 
+async function renderPortfolio() {
+  const host = document.getElementById("portfolio-cards");
+  if (!host) return;
+
+  const data = await fetchJson("data/portfolio-projects.json");
+  const projects = Array.isArray(data.projects) ? data.projects : [];
+  if (projects.length === 0) {
+    host.innerHTML = "<p>No portfolio projects available.</p>";
+    return;
+  }
+
+  host.innerHTML = projects.map((project) => {
+    const links = Array.isArray(project.links) ? project.links : [];
+    const linkHtml = links.length > 0
+      ? `<div class="link-row">${links.map((link) => {
+          const external = link.external ? ' target="_blank" rel="noreferrer"' : "";
+          return `<a href="${link.url || '#'}"${external}>${link.label || "Open"}</a>`;
+        }).join("\n")}</div>`
+      : "";
+
+    const whatTested = project.what_tested
+      ? `<p class="portfolio-field"><span class="field-label">What was tested:</span> ${project.what_tested}</p>`
+      : "";
+    const whyMatters = project.why_it_matters
+      ? `<p class="portfolio-field"><span class="field-label">Why it matters:</span> ${project.why_it_matters}</p>`
+      : "";
+
+    return `
+      <article class="card">
+        <h3>${project.name || "Untitled project"}</h3>
+        <p class="portfolio-field"><span class="field-label">How it&apos;s built:</span> ${project.tech_stack || "n/a"}</p>
+        ${whatTested}
+        ${whyMatters}
+        ${linkHtml}
+      </article>
+    `;
+  }).join("\n");
+}
+
 renderIndex().catch((err) => {
   const host = document.getElementById("project-cards");
   if (host) host.innerHTML = `<p>${err.message}</p>`;
@@ -148,3 +187,90 @@ renderProject().catch((err) => {
   const title = document.getElementById("project-title");
   if (title) title.textContent = err.message;
 });
+
+renderPortfolio().catch((err) => {
+  const host = document.getElementById("portfolio-cards");
+  if (host) host.innerHTML = `<p>${err.message}</p>`;
+});
+
+async function renderProofStrip() {
+  const strip = document.getElementById("proof-strip");
+  if (!strip) return;
+
+  const tools = ["Pytest", "Playwright", "Selenium", "Appium", "Postman", "k6"];
+
+  try {
+    const index = await fetchJson("data/projects/index.json");
+    const projects = Array.isArray(index.projects) ? index.projects : [];
+
+    let totalPassed = 0;
+    let totalFailed = 0;
+    let activeCount = 0;
+    let lastUpdated = null;
+
+    for (const item of projects) {
+      try {
+        const latest = await fetchJson(`data/projects/${item.id}/latest.json`);
+        const run = latest.latest || {};
+        if (run.status && run.status !== "not-run") activeCount++;
+        totalPassed += run.totals?.passed || 0;
+        totalFailed += run.totals?.failed || 0;
+        const runDate = run.completed_at ? new Date(run.completed_at) : null;
+        if (runDate && (!lastUpdated || runDate > lastUpdated)) lastUpdated = runDate;
+      } catch (_) { /* project data unavailable, skip */ }
+    }
+
+    const updatedStr = lastUpdated ? lastUpdated.toLocaleDateString() : "n/a";
+    const toolChips = tools.map((t) => `<span class="tool-chip">${t}</span>`).join("");
+
+    strip.innerHTML = `
+      <span class="strip-item"><span class="strip-ok">&#10003;</span> ${totalPassed} Passing</span>
+      <span class="strip-sep">|</span>
+      <span class="strip-item"><span class="strip-fail">&#10007;</span> ${totalFailed} Failing</span>
+      <span class="strip-sep">|</span>
+      <span class="strip-item">${activeCount} Active project${activeCount !== 1 ? "s" : ""}</span>
+      <span class="strip-sep">|</span>
+      <span class="strip-item strip-muted">Last updated: ${updatedStr}</span>
+      <span class="strip-sep">|</span>
+      <span class="strip-item strip-tools">${toolChips}</span>
+    `;
+  } catch (_) {
+    const toolChips = tools.map((t) => `<span class="tool-chip">${t}</span>`).join("");
+    strip.innerHTML = `<span class="strip-item strip-tools">${toolChips}</span>`;
+  }
+}
+
+renderProofStrip().catch(() => {});
+
+async function renderProjectContext() {
+  const contextEl = document.getElementById("project-context");
+  const listEl = document.getElementById("project-context-list");
+  if (!contextEl || !listEl) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const projectId = params.get("project");
+  if (!projectId) return;
+
+  try {
+    const portfolio = await fetchJson("data/portfolio-projects.json");
+    const match = (portfolio.projects || []).find(
+      (p) => p.name?.toLowerCase().replace(/\s+/g, "-") === projectId ||
+             projectId.includes(p.name?.split(" ")[0]?.toLowerCase())
+    );
+
+    if (match) {
+      const items = [
+        match.what_tested ? `What was tested: ${match.what_tested}` : null,
+        match.why_it_matters ? `Why it matters: ${match.why_it_matters}` : null,
+        match.tech_stack ? `Tools: ${match.tech_stack}` : null,
+      ].filter(Boolean);
+
+      if (items.length > 0) {
+        listEl.innerHTML = items.map((i) => `<li>${i}</li>`).join("");
+        contextEl.hidden = false;
+      }
+    }
+  } catch (_) { /* portfolio data unavailable, skip */ }
+}
+
+renderProjectContext().catch(() => {});

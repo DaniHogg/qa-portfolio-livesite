@@ -1,0 +1,77 @@
+{
+  "projects": [
+    {
+      "name": "QA Automation Template",
+      "tech_stack": "Python, Pytest, Selenium, Requests, Allure",
+      "what_tested": "API endpoints, web UI flows, and framework-level unit coverage within a single structured project.",
+      "why_it_matters": "Demonstrates how a production-ready framework is designed — with clear separation of concerns, reusable fixtures, and CI-linked reporting that makes quality evidence easy to evaluate.",
+      "application": "Reusable framework architecture with API, web UI, and unit layers in one portfolio-ready project.",
+      "links": [
+        {
+          "label": "Latest results",
+          "url": "dashboard.html"
+        },
+        {
+          "label": "Repository",
+          "url": "https://github.com/DaniHogg/qa-automation-template",
+          "external": true
+        }
+      ]
+    },
+    {
+      "name": "Playwright Automation",
+      "tech_stack": "Playwright (JavaScript), Node.js, GitHub Actions",
+      "what_tested": "Browser-based UI flows across 12 focused spec files: forms, navigation, auth, accessibility, content interaction, error handling, performance, and search — each with a single clear responsibility.",
+      "why_it_matters": "Demonstrates modern Playwright patterns — role- and text-based locators, built-in auto-waiting, and parallel execution — in a suite that stays readable and low-flakiness without a heavyweight framework layer.",
+      "application": "Fast browser automation for smoke and feature coverage with modern locator and reporting patterns.",
+      "links": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/DaniHogg/playwright-fundamentals",
+          "external": true
+        },
+        {
+          "label": "CI runs",
+          "url": "https://github.com/DaniHogg/playwright-fundamentals/actions/workflows/tests.yml",
+          "external": true
+        }
+      ]
+    },
+    {
+      "name": "Selenium Automation",
+      "tech_stack": "Selenium WebDriver, Python, Pytest",
+      "what_tested": "Cross-browser UI coverage including page interactions and regression flows using maintainable page object patterns.",
+      "why_it_matters": "Demonstrates established cross-browser automation discipline with clean abstraction between test logic and page interaction.",
+      "application": "Classic cross-browser UI coverage using maintainable page objects and regression workflows."
+    },
+    {
+      "name": "Appium Mobile Automation",
+      "tech_stack": "Appium, Python, Pytest, Allure",
+      "what_tested": "Mobile application flows including UI element interaction, navigation, and end-to-end scenario coverage.",
+      "why_it_matters": "Extends automation discipline into the mobile layer, demonstrating stable element handling and repeatable execution on device and emulator targets.",
+      "application": "Mobile test coverage focused on stable element handling and repeatable end-to-end checks."
+    },
+    {
+      "name": "API Testing with Pytest",
+      "tech_stack": "Python, Pytest, Requests",
+      "what_tested": "REST API contracts, response schemas, status handling, authentication, and error paths.",
+      "why_it_matters": "Validates that APIs behave correctly at the contract level before UI or integration tests — catching defects early and cheaply.",
+      "application": "API-level validation for contracts, status handling, and business-critical response assertions."
+    },
+    {
+      "name": "Postman API Testing",
+      "tech_stack": "Postman Collections, Newman, JavaScript tests",
+      "what_tested": "API workflows, chained request sequences, environment-specific configuration, and contract assertions.",
+      "why_it_matters": "Shareable, team-friendly API verification that integrates directly into CI and enables non-developers to inspect test logic.",
+      "application": "API workflow validation and shareable collection-based checks for team collaboration and quick verification."
+    },
+    {
+      "name": "k6 Performance Testing",
+      "tech_stack": "k6, JavaScript, CI pipelines",
+      "what_tested": "System behaviour under load, stress, spike, and soak conditions with configurable virtual user ramps.",
+      "why_it_matters": "Gives teams and reviewers measurable performance thresholds with published results, surfacing capacity risks before they reach production.",
+      "application": "Load, stress, spike, and soak scenarios with threshold-driven reporting for performance risk visibility."
+    }
+  ]
+}
+

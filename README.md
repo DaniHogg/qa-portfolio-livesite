@@ -5,9 +5,12 @@ Employer-facing static website that showcases QA automation repositories and the
 The site is designed to republish fresh automated test evidence without manual intervention.
 
 ## Site Layout
-- `index.html`: business landing page with your professional blurb and service focus.
-- `dashboard.html`: testing evidence dashboard with repository cards and latest run links.
+- `index.html`: business landing page with professional summary and navigation.
+- `about.html`: About Me page for work history and career details.
+- `portfolio.html`: testing portfolio showcase with tech stack and testing application summaries.
+- `dashboard.html`: Automation Test Results dashboard with repository cards and latest run links.
 - `project.html`: per-repository detail view for latest status, suite-level results, and run history.
+- `data/portfolio-projects.json`: source data for portfolio cards rendered on `portfolio.html`.
 
 ## What This Project Does
 - Publishes repository cards with latest run status.

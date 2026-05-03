@@ -9,11 +9,25 @@
 <body>
   <div class="bg-grid"></div>
   <main class="shell">
-    <a class="back-link" href="dashboard.html">Back to dashboard</a>
+    <nav class="top-nav" aria-label="Primary">
+      <a class="brand" href="index.html">Daniel Hogg</a>
+      <div class="top-nav-links">
+        <a href="about.html">About Me</a>
+        <a href="portfolio.html">Automation Projects</a>
+        <a href="dashboard.html">Test Results</a>
+      </div>
+    </nav>
+    <div class="link-row">
+      <a class="back-link" href="dashboard.html">Back to dashboard</a>
+    </div>
     <header class="hero">
       <p id="project-kicker" class="kicker">Project</p>
       <h1 id="project-title">Loading...</h1>
       <p id="project-summary" class="lede"></p>
+      <div id="project-context" class="project-context panel" hidden>
+        <p><strong>This project demonstrates:</strong></p>
+        <ul id="project-context-list"></ul>
+      </div>
     </header>
 
     <section class="panel">
@@ -45,6 +59,7 @@
 
     <section class="panel">
       <h2>Coverage Audit</h2>
+      <p class="muted">Coverage Audit shows how much of the system is exercised by automated tests and highlights potential gaps.</p>
       <div id="coverage-summary" class="meta-grid"></div>
       <div class="link-row">
         <a id="coverage-link" href="#">Open raw coverage audit JSON</a>

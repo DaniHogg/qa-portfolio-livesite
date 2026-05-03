@@ -74,6 +74,13 @@ jobs:
             --commit-sha "${{ github.event_name == 'repository_dispatch' && github.event.client_payload.source_commit_sha || github.sha }}" \
             --repo-url "https://github.com/${{ github.event_name == 'repository_dispatch' && github.event.client_payload.source_repo || vars.SOURCE_REPO }}"
 
+      - name: Fetch Playwright CI status
+        run: |
+          python scripts/fetch_playwright_status.py \
+            --output-dir data/projects
+        env:
+          SOURCE_REPO_TOKEN: ${{ secrets.SOURCE_REPO_TOKEN }}
+
       - name: Commit refreshed data
         run: |
           git config user.name "github-actions[bot]"
