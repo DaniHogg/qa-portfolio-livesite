@@ -26,13 +26,12 @@
       "application": "Fast browser automation for smoke and feature coverage with modern locator and reporting patterns.",
       "links": [
         {
-          "label": "Repository",
-          "url": "https://github.com/DaniHogg/playwright-fundamentals",
-          "external": true
+          "label": "Latest results",
+          "url": "dashboard.html"
         },
         {
-          "label": "CI runs",
-          "url": "https://github.com/DaniHogg/playwright-fundamentals/actions/workflows/tests.yml",
+          "label": "Repository",
+          "url": "https://github.com/DaniHogg/playwright-fundamentals",
           "external": true
         }
       ]
@@ -46,12 +45,13 @@
       "id": "selenium",
       "links": [
         {
-          "label": "Repository",
-          "url": "https://github.com/DaniHogg/Selenium"
+          "label": "Latest results",
+          "url": "dashboard.html"
         },
         {
-          "label": "CI Runs",
-          "url": "https://github.com/DaniHogg/Selenium/actions/workflows/selenium-ci.yml"
+          "label": "Repository",
+          "url": "https://github.com/DaniHogg/Selenium",
+          "external": true
         }
       ]
     },

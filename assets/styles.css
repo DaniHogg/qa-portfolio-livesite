@@ -271,6 +271,18 @@ body {
   gap: 0.8rem;
 }
 
+.meta-value {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.meta-value-commit {
+  font-size: clamp(0.72rem, 1.5vw, 0.9rem);
+  line-height: 1.35;
+}
+
 .suite-table {
   width: 100%;
   border-collapse: collapse;

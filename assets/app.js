@@ -90,7 +90,11 @@ async function renderProject() {
   ];
 
   document.getElementById("latest-meta").innerHTML = meta
-    .map(([k, v]) => `<div class="card"><strong>${k}</strong><br>${v || "n/a"}</div>`)
+    .map(([k, v]) => {
+      const safeValue = v || "n/a";
+      const valueClass = k === "Commit" ? "meta-value meta-value-commit" : "meta-value";
+      return `<div class="card"><strong>${k}</strong><br><span class="${valueClass}">${safeValue}</span></div>`;
+    })
     .join("\n");
 
   const suites = Array.isArray(latest.suites) ? latest.suites : [];
