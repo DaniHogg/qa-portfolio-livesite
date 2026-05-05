@@ -154,52 +154,51 @@ async function renderPortfolio() {
     return;
   }
 
-  host.innerHTML = projects.map((project) => {
-    // Group projects by category, preserving insertion order
-    const groups = new Map();
-    for (const project of projects) {
-      const cat = project.category || "Other";
-      if (!groups.has(cat)) groups.set(cat, []);
-      groups.get(cat).push(project);
-    }
+  // Group projects by category, preserving insertion order
+  const groups = new Map();
+  for (const project of projects) {
+    const cat = project.category || "Other";
+    if (!groups.has(cat)) groups.set(cat, []);
+    groups.get(cat).push(project);
+  }
 
-    const sections = [];
-    for (const [category, items] of groups) {
-      const cards = items.map((project) => {
-        const links = Array.isArray(project.links) ? project.links : [];
-        const linkHtml = links.length > 0
-          ? `<div class="link-row">${links.map((link) => {
-              const external = link.external ? ' target="_blank" rel="noreferrer"' : "";
-              return `<a href="${link.url || '#'}"${external}>${link.label || "Open"}</a>`;
-            }).join("\n")}</div>`
-          : "";
+  const sections = [];
+  for (const [category, items] of groups) {
+    const cards = items.map((project) => {
+      const links = Array.isArray(project.links) ? project.links : [];
+      const linkHtml = links.length > 0
+        ? `<div class="link-row">${links.map((link) => {
+            const external = link.external ? ' target="_blank" rel="noreferrer"' : "";
+            return `<a href="${link.url || '#'}"${external}>${link.label || "Open"}</a>`;
+          }).join("\n")}</div>`
+        : "";
 
-        const whatTested = project.what_tested
-          ? `<p class="portfolio-field"><span class="field-label">What was tested:</span> ${project.what_tested}</p>`
-          : "";
-        const whyMatters = project.why_it_matters
-          ? `<p class="portfolio-field"><span class="field-label">Why it matters:</span> ${project.why_it_matters}</p>`
-          : "";
+      const whatTested = project.what_tested
+        ? `<p class="portfolio-field"><span class="field-label">What was tested:</span> ${project.what_tested}</p>`
+        : "";
+      const whyMatters = project.why_it_matters
+        ? `<p class="portfolio-field"><span class="field-label">Why it matters:</span> ${project.why_it_matters}</p>`
+        : "";
 
-        return `
-          <article class="card portfolio-card">
-            <h3>${project.name || "Untitled project"}</h3>
-            <p class="portfolio-field"><span class="field-label">How it&apos;s built:</span> ${project.tech_stack || "n/a"}</p>
-            ${whatTested}
-            ${whyMatters}
-            ${linkHtml}
-          </article>`;
-      }).join("\n");
+      return `
+        <article class="card portfolio-card">
+          <h3>${project.name || "Untitled project"}</h3>
+          <p class="portfolio-field"><span class="field-label">How it&apos;s built:</span> ${project.tech_stack || "n/a"}</p>
+          ${whatTested}
+          ${whyMatters}
+          ${linkHtml}
+        </article>`;
+    }).join("\n");
 
-      sections.push(`
-        <section class="portfolio-category">
-          <h2 class="category-heading">${category}</h2>
-          <div class="portfolio-grid">${cards}
-          </div>
-        </section>`);
-    }
+    sections.push(`
+      <section class="portfolio-category">
+        <h2 class="category-heading">${category}</h2>
+        <div class="portfolio-grid">${cards}
+        </div>
+      </section>`);
+  }
 
-    host.innerHTML = sections.join("\n");
+  host.innerHTML = sections.join("\n");
 }
 
 renderIndex().catch((err) => {
