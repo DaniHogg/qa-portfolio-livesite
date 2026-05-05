@@ -1,11 +1,11 @@
 {
   "project_id": "qa-automation-template",
-  "run_id": "25352127871",
-  "generated_at": "2026-05-05T01:01:12.015344Z",
+  "run_id": "gha-25352812257",
+  "generated_at": "2026-05-05T01:23:16.196811Z",
   "summary": {
     "covered_suites": 0,
     "not_covered_suites": 0,
-    "unknown_suites": 8
+    "unknown_suites": 5
   },
   "covered": [],
   "not_covered": [],
@@ -22,27 +22,6 @@
       "expected_test_files": null,
       "observed_results": 6,
       "status": "passed",
-      "notes": "Suite observed in report but not in expected mapping"
-    },
-    {
-      "suite_id": "reference-api",
-      "expected_test_files": null,
-      "observed_results": 0,
-      "status": "not-run",
-      "notes": "Suite observed in report but not in expected mapping"
-    },
-    {
-      "suite_id": "reference-web",
-      "expected_test_files": null,
-      "observed_results": 0,
-      "status": "not-run",
-      "notes": "Suite observed in report but not in expected mapping"
-    },
-    {
-      "suite_id": "reference-winapp",
-      "expected_test_files": null,
-      "observed_results": 0,
-      "status": "not-run",
       "notes": "Suite observed in report but not in expected mapping"
     },
     {
