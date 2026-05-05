@@ -1,7 +1,9 @@
 {
   "projects": [
     {
+      "category": "Web Automation",
       "name": "QA Automation Template",
+      "id": "qa-automation-template",
       "tech_stack": "Python, Pytest, Selenium, Requests, Allure",
       "what_tested": "API endpoints, web UI flows, and framework-level unit coverage within a single structured project.",
       "why_it_matters": "Demonstrates how a production-ready framework is designed \u2014 with clear separation of concerns, reusable fixtures, and CI-linked reporting that makes quality evidence easy to evaluate.",
@@ -9,7 +11,7 @@
       "links": [
         {
           "label": "Latest results",
-          "url": "dashboard.html"
+          "url": "project.html?project=qa-automation-template"
         },
         {
           "label": "Repository",
@@ -19,7 +21,9 @@
       ]
     },
     {
+      "category": "Web Automation",
       "name": "Playwright Automation",
+      "id": "playwright",
       "tech_stack": "Playwright (JavaScript), Node.js, GitHub Actions",
       "what_tested": "Browser-based UI flows across 12 focused spec files: forms, navigation, auth, accessibility, content interaction, error handling, performance, and search \u2014 each with a single clear responsibility.",
       "why_it_matters": "Demonstrates modern Playwright patterns \u2014 role- and text-based locators, built-in auto-waiting, and parallel execution \u2014 in a suite that stays readable and low-flakiness without a heavyweight framework layer.",
@@ -27,7 +31,7 @@
       "links": [
         {
           "label": "Latest results",
-          "url": "dashboard.html"
+          "url": "project.html?project=playwright"
         },
         {
           "label": "Repository",
@@ -37,16 +41,17 @@
       ]
     },
     {
+      "category": "Web Automation",
       "name": "Selenium Automation",
+      "id": "selenium",
       "tech_stack": "Selenium WebDriver, Python, Pytest",
       "what_tested": "Cross-browser UI coverage including page interactions and regression flows using maintainable page object patterns.",
       "why_it_matters": "Demonstrates established cross-browser automation discipline with clean abstraction between test logic and page interaction.",
       "application": "Classic cross-browser UI coverage using maintainable page objects and regression workflows.",
-      "id": "selenium",
       "links": [
         {
           "label": "Latest results",
-          "url": "dashboard.html"
+          "url": "project.html?project=selenium"
         },
         {
           "label": "Repository",
@@ -56,23 +61,17 @@
       ]
     },
     {
-      "name": "Appium Mobile Automation",
-      "tech_stack": "Appium, Python, Pytest, Allure",
-      "what_tested": "Mobile application flows including UI element interaction, navigation, and end-to-end scenario coverage.",
-      "why_it_matters": "Extends automation discipline into the mobile layer, demonstrating stable element handling and repeatable execution on device and emulator targets.",
-      "application": "Mobile test coverage focused on stable element handling and repeatable end-to-end checks."
-    },
-    {
+      "category": "API Testing",
       "name": "API Testing with Pytest",
       "id": "api-testing-pytest",
       "tech_stack": "Python, Pytest, Requests",
-      "what_tested": "REST API contracts, response schemas, status handling, authentication, and error paths — tested directly against a deployed FastAPI backend.",
+      "what_tested": "REST API contracts, response schemas, status handling, and error paths \u2014 tested directly against a deployed FastAPI backend on Render.",
       "why_it_matters": "Validates that APIs behave correctly at the contract level before UI or integration tests \u2014 catching defects early and cheaply.",
       "application": "API-level validation for contracts, status handling, and business-critical response assertions.",
       "links": [
         {
           "label": "Latest results",
-          "url": "dashboard.html"
+          "url": "project.html?project=api-testing-pytest"
         },
         {
           "label": "Repository",
@@ -82,16 +81,17 @@
       ]
     },
     {
+      "category": "API Testing",
       "name": "Postman API Testing",
       "id": "postman-api",
       "tech_stack": "Postman Collections, Newman, JavaScript tests",
-      "what_tested": "API workflows, chained request sequences, environment-specific configuration, and contract assertions — including a full posts CRUD flow against the Render backend.",
+      "what_tested": "API workflows, chained request sequences, environment-specific configuration, and contract assertions \u2014 including a full posts CRUD flow against the Render backend.",
       "why_it_matters": "Shareable, team-friendly API verification that integrates directly into CI and enables non-developers to inspect test logic.",
       "application": "API workflow validation and shareable collection-based checks for team collaboration and quick verification.",
       "links": [
         {
           "label": "Latest results",
-          "url": "dashboard.html"
+          "url": "project.html?project=postman-api"
         },
         {
           "label": "Repository",
@@ -101,6 +101,15 @@
       ]
     },
     {
+      "category": "Mobile Automation",
+      "name": "Appium Mobile Automation",
+      "tech_stack": "Appium, Python, Pytest, Allure",
+      "what_tested": "Mobile application flows including UI element interaction, navigation, and end-to-end scenario coverage.",
+      "why_it_matters": "Extends automation discipline into the mobile layer, demonstrating stable element handling and repeatable execution on device and emulator targets.",
+      "application": "Mobile test coverage focused on stable element handling and repeatable end-to-end checks."
+    },
+    {
+      "category": "Performance Testing",
       "name": "k6 Performance Testing",
       "tech_stack": "k6, JavaScript, CI pipelines",
       "what_tested": "System behaviour under load, stress, spike, and soak conditions with configurable virtual user ramps.",

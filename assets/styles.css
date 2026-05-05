@@ -378,6 +378,32 @@ body {
 .portfolio-field {
   margin: 0.45rem 0;
   font-size: 0.93rem;
+
+/* ── Portfolio category grouping ─────────────── */
+.portfolio-category {
+  margin-top: 2rem;
+}
+
+.category-heading {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 1rem;
+}
+
+.portfolio-card {
+  min-width: 0;
+}
 }
 
 /* ── Dashboard context ───────────────────────── */
