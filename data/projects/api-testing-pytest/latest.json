@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-05-05T05:37:35.284977Z",
+  "last_refreshed_at": "2026-05-05T05:56:20.338922Z",
   "project": {
     "id": "api-testing-pytest",
     "name": "API Testing with Pytest",
@@ -12,20 +12,20 @@
     "repository_url": "https://github.com/DaniHogg/API-testing-pytest"
   },
   "latest": {
-    "run_id": "25354075056",
+    "run_id": "25360294104",
     "source": {
       "provider": "github-actions",
       "workflow": "API Tests CI",
       "branch": "main",
-      "commit_sha": "ab67018bd958d000a1475f3ea39abb0c1d7f7979",
-      "run_url": "https://github.com/DaniHogg/API-testing-pytest/actions/runs/25354075056"
+      "commit_sha": "85d308b1177186cf272b0f085c54545807e5b0b5",
+      "run_url": "https://github.com/DaniHogg/API-testing-pytest/actions/runs/25360294104"
     },
-    "status": "failed",
-    "started_at": "2026-05-05T02:07:56Z",
-    "completed_at": "2026-05-05T02:07:56Z",
-    "duration_seconds": 0,
+    "status": "passed",
+    "started_at": "2026-05-05T05:55:00Z",
+    "completed_at": "2026-05-05T05:55:23Z",
+    "duration_seconds": 23,
     "totals": {
-      "passed": 0,
+      "passed": 8,
       "failed": 0,
       "skipped": 0,
       "errors": 0
@@ -34,18 +34,24 @@
       {
         "suite_id": "test_api",
         "suite_name": "Api",
-        "status": "failed",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 8,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts unavailable: no api-pytest-json artifact was provided for this run."
+        "notes": "Counts derived from pytest-json-report artifact."
       }
     ]
   },
   "history": [
+    {
+      "run_id": "25354075056",
+      "status": "failed",
+      "completed_at": "2026-05-05T02:07:56Z",
+      "run_url": "https://github.com/DaniHogg/API-testing-pytest/actions/runs/25354075056"
+    },
     {
       "run_id": "25353499830",
       "status": "passed",
