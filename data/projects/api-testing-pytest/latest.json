@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-05-05T01:45:53.661823Z",
+  "last_refreshed_at": "2026-05-05T01:53:33.236667Z",
   "project": {
     "id": "api-testing-pytest",
     "name": "API Testing with Pytest",
@@ -12,20 +12,20 @@
     "repository_url": "https://github.com/DaniHogg/API-testing-pytest"
   },
   "latest": {
-    "run_id": "25353438308",
+    "run_id": "25353499830",
     "source": {
       "provider": "github-actions",
       "workflow": "API Tests CI",
       "branch": "main",
-      "commit_sha": "590d88fe3bf006c3f3b16b4f1c8acfed8e937bc0",
-      "run_url": "https://github.com/DaniHogg/API-testing-pytest/actions/runs/25353438308"
+      "commit_sha": "54172269f44c975907e447ee7fffb304f9c55505",
+      "run_url": "https://github.com/DaniHogg/API-testing-pytest/actions/runs/25353499830"
     },
-    "status": "failed",
-    "started_at": "2026-05-05T01:45:12Z",
-    "completed_at": "2026-05-05T01:45:12Z",
-    "duration_seconds": 0,
+    "status": "passed",
+    "started_at": "2026-05-05T01:47:28Z",
+    "completed_at": "2026-05-05T01:47:48Z",
+    "duration_seconds": 20,
     "totals": {
-      "passed": 0,
+      "passed": 8,
       "failed": 0,
       "skipped": 0,
       "errors": 0
@@ -34,16 +34,23 @@
       {
         "suite_id": "test_api",
         "suite_name": "Api",
-        "status": "failed",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 8,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-test counts unavailable: no api-pytest-json artifact was provided for this run."
+        "notes": "Counts derived from pytest-json-report artifact."
       }
     ]
   },
-  "history": []
+  "history": [
+    {
+      "run_id": "25353438308",
+      "status": "failed",
+      "completed_at": "2026-05-05T01:45:12Z",
+      "run_url": "https://github.com/DaniHogg/API-testing-pytest/actions/runs/25353438308"
+    }
+  ]
 }
