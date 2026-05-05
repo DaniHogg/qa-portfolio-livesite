@@ -100,11 +100,6 @@ def classify_suite(record: dict[str, Any]) -> str:
             return "web-regression"
         return "web"
 
-    if ".reference.api." in package or ".reference.api." in full_name:
-        return "reference-api"
-    if ".reference.web." in package or ".reference.web." in full_name:
-        return "reference-web"
-
     if ".api." in full_name or ".api." in package:
         return "api"
     if ".web." in full_name or ".web." in package:
@@ -123,9 +118,6 @@ def suite_name(suite_id: str) -> str:
         "web-smoke": "Web Smoke",
         "web-regression": "Web Regression",
         "mobile": "Mobile",
-        "reference-api": "Reference API",
-        "reference-web": "Reference Web",
-        "reference-winapp": "Reference WinApp",
         "other": "Other",
     }
     return mapping.get(suite_id, suite_id.replace("-", " ").title())
@@ -136,26 +128,16 @@ def expected_suites(project_id: str) -> list[tuple[str, str]]:
         return [
             ("unit", "Framework-level tests"),
             ("api-smoke", "Basic API health checks"),
-            ("api-regression", "Extended API coverage; may be workflow_dispatch-gated"),
-            ("web-smoke", "UI smoke coverage; may be workflow_dispatch-gated"),
-            ("web-regression", "UI regression coverage; may be workflow_dispatch-gated"),
-            ("reference-api", "Template library; excluded from default pytest run unless explicitly invoked"),
-            ("reference-web", "Template library; excluded from default pytest run unless explicitly invoked"),
-            ("reference-winapp", "Windows-only template coverage; requires WinAppDriver on Windows agent"),
+            ("api-regression", "Extended API coverage"),
+            ("web-smoke", "UI smoke coverage"),
+            ("web-regression", "UI regression coverage"),
         ]
     return []
 
 
 def suite_execution_note(suite_id: str, status: str, base_note: str) -> str:
     if status == "not-run":
-        if suite_id in {"reference-api", "reference-web"}:
-            return f"{base_note} Not run in this cycle."
-        if suite_id == "reference-winapp":
-            return f"{base_note} Not run in this cycle."
-        if suite_id in {"api-regression", "web-smoke", "web-regression"}:
-            return f"{base_note} Not run in this cycle."
-        if suite_id == "unit":
-            return f"{base_note} Not run in this cycle."
+        return f"{base_note} Not run in this cycle."
     return base_note
 
 
@@ -170,9 +152,6 @@ def collect_expected_counts(project_id: str) -> dict[str, int]:
     mapping = {
         "api": "api-smoke",
         "unit": "unit",
-        "reference/api": "reference-api",
-        "reference/web": "reference-web",
-        "reference/winapp": "reference-winapp",
     }
 
     counts: Counter[str] = Counter()
