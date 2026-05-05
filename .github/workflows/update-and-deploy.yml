@@ -134,6 +134,38 @@ jobs:
         env:
           SOURCE_REPO_TOKEN: ${{ secrets.SOURCE_REPO_TOKEN }}
 
+      - name: Fetch API-testing-pytest CI status
+        run: |
+          if [ "${{ github.event_name }}" = "repository_dispatch" ] && [ "${{ github.event.client_payload.source_repo }}" = "DaniHogg/API-testing-pytest" ]; then
+            python scripts/fetch_api_pytest_status.py \
+              --output-dir data/projects \
+              --run-id "${{ github.event.client_payload.source_run_id }}" \
+              --run-url "${{ github.event.client_payload.source_run_url }}" \
+              --branch "${{ github.event.client_payload.source_branch }}" \
+              --commit-sha "${{ github.event.client_payload.source_commit_sha }}"
+          else
+            python scripts/fetch_api_pytest_status.py \
+              --output-dir data/projects
+          fi
+        env:
+          SOURCE_REPO_TOKEN: ${{ secrets.SOURCE_REPO_TOKEN }}
+
+      - name: Fetch Postman CI status
+        run: |
+          if [ "${{ github.event_name }}" = "repository_dispatch" ] && [ "${{ github.event.client_payload.source_repo }}" = "DaniHogg/Postman-API-Tests" ]; then
+            python scripts/fetch_postman_status.py \
+              --output-dir data/projects \
+              --run-id "${{ github.event.client_payload.source_run_id }}" \
+              --run-url "${{ github.event.client_payload.source_run_url }}" \
+              --branch "${{ github.event.client_payload.source_branch }}" \
+              --commit-sha "${{ github.event.client_payload.source_commit_sha }}"
+          else
+            python scripts/fetch_postman_status.py \
+              --output-dir data/projects
+          fi
+        env:
+          SOURCE_REPO_TOKEN: ${{ secrets.SOURCE_REPO_TOKEN }}
+
       - name: Commit refreshed data
         run: |
           git config user.name "github-actions[bot]"

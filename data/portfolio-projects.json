@@ -64,17 +64,41 @@
     },
     {
       "name": "API Testing with Pytest",
+      "id": "api-testing-pytest",
       "tech_stack": "Python, Pytest, Requests",
-      "what_tested": "REST API contracts, response schemas, status handling, authentication, and error paths.",
+      "what_tested": "REST API contracts, response schemas, status handling, authentication, and error paths — tested directly against a deployed FastAPI backend.",
       "why_it_matters": "Validates that APIs behave correctly at the contract level before UI or integration tests \u2014 catching defects early and cheaply.",
-      "application": "API-level validation for contracts, status handling, and business-critical response assertions."
+      "application": "API-level validation for contracts, status handling, and business-critical response assertions.",
+      "links": [
+        {
+          "label": "Latest results",
+          "url": "dashboard.html"
+        },
+        {
+          "label": "Repository",
+          "url": "https://github.com/DaniHogg/API-testing-pytest",
+          "external": true
+        }
+      ]
     },
     {
       "name": "Postman API Testing",
+      "id": "postman-api",
       "tech_stack": "Postman Collections, Newman, JavaScript tests",
-      "what_tested": "API workflows, chained request sequences, environment-specific configuration, and contract assertions.",
+      "what_tested": "API workflows, chained request sequences, environment-specific configuration, and contract assertions — including a full posts CRUD flow against the Render backend.",
       "why_it_matters": "Shareable, team-friendly API verification that integrates directly into CI and enables non-developers to inspect test logic.",
-      "application": "API workflow validation and shareable collection-based checks for team collaboration and quick verification."
+      "application": "API workflow validation and shareable collection-based checks for team collaboration and quick verification.",
+      "links": [
+        {
+          "label": "Latest results",
+          "url": "dashboard.html"
+        },
+        {
+          "label": "Repository",
+          "url": "https://github.com/DaniHogg/Postman-API-Tests",
+          "external": true
+        }
+      ]
     },
     {
       "name": "k6 Performance Testing",
