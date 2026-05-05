@@ -11,6 +11,14 @@
     {
       "id": "selenium",
       "summary": "Selenium WebDriver automation \u2014 5 focused test files covering the portfolio site, GitHub Actions CI"
+    },
+    {
+      "id": "api-testing-pytest",
+      "summary": "Pytest API tests \u2014 smoke and regression coverage against the deployed Render backend"
+    },
+    {
+      "id": "postman-api",
+      "summary": "Postman/Newman collection \u2014 full posts CRUD workflow with 19 assertions against the Render backend"
     }
   ]
 }
