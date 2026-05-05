@@ -1,0 +1,49 @@
+{
+  "$schema_version": "1.0.0",
+  "last_refreshed_at": "2026-05-05T01:45:53.661823Z",
+  "project": {
+    "id": "api-testing-pytest",
+    "name": "API Testing with Pytest",
+    "frameworks": [
+      "pytest",
+      "requests",
+      "python"
+    ],
+    "repository_url": "https://github.com/DaniHogg/API-testing-pytest"
+  },
+  "latest": {
+    "run_id": "25353438308",
+    "source": {
+      "provider": "github-actions",
+      "workflow": "API Tests CI",
+      "branch": "main",
+      "commit_sha": "590d88fe3bf006c3f3b16b4f1c8acfed8e937bc0",
+      "run_url": "https://github.com/DaniHogg/API-testing-pytest/actions/runs/25353438308"
+    },
+    "status": "failed",
+    "started_at": "2026-05-05T01:45:12Z",
+    "completed_at": "2026-05-05T01:45:12Z",
+    "duration_seconds": 0,
+    "totals": {
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "errors": 0
+    },
+    "suites": [
+      {
+        "suite_id": "test_api",
+        "suite_name": "Api",
+        "status": "failed",
+        "totals": {
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "Per-test counts unavailable: no api-pytest-json artifact was provided for this run."
+      }
+    ]
+  },
+  "history": []
+}

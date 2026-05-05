@@ -1,7 +1,7 @@
 {
   "project_id": "qa-automation-template",
-  "run_id": "25352808245",
-  "generated_at": "2026-05-05T01:24:40.066372Z",
+  "run_id": "gha-25353446773",
+  "generated_at": "2026-05-05T01:45:49.725498Z",
   "summary": {
     "covered_suites": 0,
     "not_covered_suites": 0,
@@ -13,14 +13,14 @@
     {
       "suite_id": "api-regression",
       "expected_test_files": null,
-      "observed_results": 1,
+      "observed_results": 3,
       "status": "passed",
       "notes": "Suite observed in report but not in expected mapping"
     },
     {
       "suite_id": "api-smoke",
       "expected_test_files": null,
-      "observed_results": 2,
+      "observed_results": 5,
       "status": "passed",
       "notes": "Suite observed in report but not in expected mapping"
     },
