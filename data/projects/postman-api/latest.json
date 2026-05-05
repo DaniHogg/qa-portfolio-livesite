@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-05-05T02:08:39.090130Z",
+  "last_refreshed_at": "2026-05-05T02:17:38.099265Z",
   "project": {
     "id": "postman-api",
     "name": "Postman API Testing",
@@ -12,20 +12,20 @@
     "repository_url": "https://github.com/DaniHogg/Postman-API-Tests"
   },
   "latest": {
-    "run_id": "25354075587",
+    "run_id": "25354280482",
     "source": {
       "provider": "github-actions",
       "workflow": "Postman API Tests CI",
       "branch": "master",
-      "commit_sha": "33a9585d6a5c489b52c52c877a1695dcadbff816",
-      "run_url": "https://github.com/DaniHogg/Postman-API-Tests/actions/runs/25354075587"
+      "commit_sha": "c1c00802705b507d346759c042cbbe5140ef35cc",
+      "run_url": "https://github.com/DaniHogg/Postman-API-Tests/actions/runs/25354280482"
     },
-    "status": "failed",
-    "started_at": "2026-05-05T02:07:58Z",
-    "completed_at": "2026-05-05T02:07:58Z",
-    "duration_seconds": 0,
+    "status": "passed",
+    "started_at": "2026-05-05T02:15:19Z",
+    "completed_at": "2026-05-05T02:15:57Z",
+    "duration_seconds": 38,
     "totals": {
-      "passed": 0,
+      "passed": 19,
       "failed": 0,
       "skipped": 0,
       "errors": 0
@@ -34,90 +34,96 @@
       {
         "suite_id": "1 - Health Check",
         "suite_name": "1 - Health Check",
-        "status": "failed",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 3,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-request counts unavailable: no postman-json artifact was found for this run."
+        "notes": "Assertion counts derived from Newman JSON reporter."
       },
       {
         "suite_id": "2 - List Posts",
         "suite_name": "2 - List Posts",
-        "status": "failed",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 3,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-request counts unavailable: no postman-json artifact was found for this run."
+        "notes": "Assertion counts derived from Newman JSON reporter."
       },
       {
         "suite_id": "3 - Create Post",
         "suite_name": "3 - Create Post",
-        "status": "failed",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 3,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-request counts unavailable: no postman-json artifact was found for this run."
+        "notes": "Assertion counts derived from Newman JSON reporter."
       },
       {
         "suite_id": "4 - Get Post by Id",
         "suite_name": "4 - Get Post by Id",
-        "status": "failed",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 3,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-request counts unavailable: no postman-json artifact was found for this run."
+        "notes": "Assertion counts derived from Newman JSON reporter."
       },
       {
         "suite_id": "5 - Update Post",
         "suite_name": "5 - Update Post",
-        "status": "failed",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 3,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-request counts unavailable: no postman-json artifact was found for this run."
+        "notes": "Assertion counts derived from Newman JSON reporter."
       },
       {
         "suite_id": "6 - Delete Post",
         "suite_name": "6 - Delete Post",
-        "status": "failed",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 2,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-request counts unavailable: no postman-json artifact was found for this run."
+        "notes": "Assertion counts derived from Newman JSON reporter."
       },
       {
         "suite_id": "7 - Get Non-existent Post (404)",
         "suite_name": "7 - Get Non-existent Post (404)",
-        "status": "failed",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 2,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Per-request counts unavailable: no postman-json artifact was found for this run."
+        "notes": "Assertion counts derived from Newman JSON reporter."
       }
     ]
   },
   "history": [
+    {
+      "run_id": "25354075587",
+      "status": "failed",
+      "completed_at": "2026-05-05T02:07:58Z",
+      "run_url": "https://github.com/DaniHogg/Postman-API-Tests/actions/runs/25354075587"
+    },
     {
       "run_id": "25353500864",
       "status": "passed",
