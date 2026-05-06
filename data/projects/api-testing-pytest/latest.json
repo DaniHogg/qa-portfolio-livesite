@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-05-06T07:32:18.154432Z",
+  "last_refreshed_at": "2026-05-06T14:29:43.634032Z",
   "project": {
     "id": "api-testing-pytest",
     "name": "API Testing with Pytest",
@@ -12,18 +12,18 @@
     "repository_url": "https://github.com/DaniHogg/API-testing-pytest"
   },
   "latest": {
-    "run_id": "25364718834",
+    "run_id": "25423902479",
     "source": {
       "provider": "github-actions",
       "workflow": "API Tests CI",
       "branch": "main",
       "commit_sha": "85d308b1177186cf272b0f085c54545807e5b0b5",
-      "run_url": "https://github.com/DaniHogg/API-testing-pytest/actions/runs/25364718834"
+      "run_url": "https://github.com/DaniHogg/API-testing-pytest/actions/runs/25423902479"
     },
     "status": "passed",
-    "started_at": "2026-05-05T07:59:34Z",
-    "completed_at": "2026-05-05T08:00:39Z",
-    "duration_seconds": 65,
+    "started_at": "2026-05-06T08:11:23Z",
+    "completed_at": "2026-05-06T08:12:34Z",
+    "duration_seconds": 71,
     "totals": {
       "passed": 8,
       "failed": 0,
@@ -46,6 +46,12 @@
     ]
   },
   "history": [
+    {
+      "run_id": "25364718834",
+      "status": "passed",
+      "completed_at": "2026-05-05T08:00:39Z",
+      "run_url": "https://github.com/DaniHogg/API-testing-pytest/actions/runs/25364718834"
+    },
     {
       "run_id": "25360294104",
       "status": "passed",
