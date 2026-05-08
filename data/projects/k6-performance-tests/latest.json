@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-05-08T00:00:00Z",
+  "last_refreshed_at": "2026-05-08T05:30:43.789525Z",
   "project": {
     "id": "k6-performance-tests",
     "name": "k6 Performance Testing",
@@ -11,17 +11,17 @@
     "repository_url": "https://github.com/DaniHogg/k6-performance-tests"
   },
   "latest": {
-    "run_id": "pending",
+    "run_id": "25538706697",
     "source": {
       "provider": "github-actions",
       "workflow": "k6 Performance Tests",
       "branch": "main",
-      "commit_sha": "",
-      "run_url": "https://github.com/DaniHogg/k6-performance-tests/actions"
+      "commit_sha": "cb429e2945764b1d61866248acfbd18ea2ed1661",
+      "run_url": "https://github.com/DaniHogg/k6-performance-tests/actions/runs/25538706697"
     },
-    "status": "unknown",
-    "started_at": null,
-    "completed_at": null,
+    "status": "failed",
+    "started_at": "2026-05-08T05:30:12Z",
+    "completed_at": "2026-05-08T05:30:12Z",
     "duration_seconds": 0,
     "totals": {
       "passed": 0,
@@ -33,40 +33,71 @@
       {
         "suite_id": "baseline",
         "suite_name": "Baseline (10 VUs \u00d7 30s)",
-        "status": "unknown",
+        "status": "failed",
         "totals": {
           "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Awaiting first CI run."
+        "notes": "Per-metric counts unavailable: no k6-json artifact was found for this run."
       },
       {
         "suite_id": "ramp-up",
         "suite_name": "Ramp-Up (1 \u2192 50 VUs over 3.5 min)",
-        "status": "unknown",
+        "status": "failed",
         "totals": {
           "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Awaiting first CI run."
+        "notes": "Per-metric counts unavailable: no k6-json artifact was found for this run."
       },
       {
         "suite_id": "soak",
         "suite_name": "Soak (20 VUs \u00d7 5 min)",
-        "status": "unknown",
+        "status": "failed",
         "totals": {
           "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Awaiting first CI run."
+        "notes": "Per-metric counts unavailable: no k6-json artifact was found for this run."
       }
     ]
   },
-  "history": []
+  "history": [
+    {
+      "run_id": "25537613757",
+      "status": "failed",
+      "completed_at": "2026-05-08T04:56:30Z",
+      "run_url": "https://github.com/DaniHogg/k6-performance-tests/actions/runs/25537613757"
+    },
+    {
+      "run_id": "25477952319",
+      "status": "failed",
+      "completed_at": "2026-05-07T05:36:37Z",
+      "run_url": "https://github.com/DaniHogg/k6-performance-tests/actions/runs/25477952319"
+    },
+    {
+      "run_id": "25418325091",
+      "status": "failed",
+      "completed_at": "2026-05-06T05:33:49Z",
+      "run_url": "https://github.com/DaniHogg/k6-performance-tests/actions/runs/25418325091"
+    },
+    {
+      "run_id": "25359250789",
+      "status": "failed",
+      "completed_at": "2026-05-05T05:19:08Z",
+      "run_url": "https://github.com/DaniHogg/k6-performance-tests/actions/runs/25359250789"
+    },
+    {
+      "run_id": "25302964269",
+      "status": "failed",
+      "completed_at": "2026-05-04T05:39:45Z",
+      "run_url": "https://github.com/DaniHogg/k6-performance-tests/actions/runs/25302964269"
+    }
+  ]
 }
