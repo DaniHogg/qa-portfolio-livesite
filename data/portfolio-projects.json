@@ -1,6 +1,26 @@
 {
   "projects": [
     {
+      "category": "Agentic QA",
+      "name": "Agentic QA Tool",
+      "id": "agentic-qa-tool",
+      "tech_stack": "Python, Typer CLI, LangGraph, LangChain, Anthropic/OpenAI, Pytest",
+      "what_tested": "Interactive, human-in-the-loop QA workflows where AI proposes test plans, accepts reviewer edits, then generates and executes tests with artifact reporting.",
+      "why_it_matters": "Demonstrates practical AI-assisted QA design with explicit approval gates, configurable test strategy (smoke/sanity/regression), and evidence-first outputs suited for team review.",
+      "application": "Agentic QA orchestration with reviewer approval, execution control, and maintainable artifact lifecycle.",
+      "links": [
+        {
+          "label": "Project page",
+          "url": "agentic-qa-tool.html"
+        },
+        {
+          "label": "Repository",
+          "url": "https://github.com/DaniHogg/Agentic-QA-Tool",
+          "external": true
+        }
+      ]
+    },
+    {
       "category": "Web Automation",
       "name": "QA Automation Template",
       "id": "qa-automation-template",
