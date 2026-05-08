@@ -87,6 +87,19 @@ jobs:
           path: incoming/allure-results
           if_no_artifact_found: fail
 
+      - name: Download dispatched k6 JSON artifact by run id
+        if: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.source_artifact == 'k6-json' }}
+        id: download-dispatch-k6
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          github_token: ${{ secrets.SOURCE_REPO_TOKEN != '' && secrets.SOURCE_REPO_TOKEN || github.token }}
+          repo: ${{ github.event.client_payload.source_repo }}
+          workflow: ${{ github.event.client_payload.source_workflow }}
+          run_id: ${{ github.event.client_payload.source_run_id }}
+          name: k6-json
+          path: incoming/k6-json
+          if_no_artifact_found: fail
+
       - name: Extract normalized summary
         if: ${{ (github.event_name == 'repository_dispatch' && github.event.client_payload.source_artifact == 'allure-results') || (github.event_name != 'repository_dispatch' && vars.SOURCE_REPO != '' && vars.SOURCE_WORKFLOW != '') }}
         run: |
@@ -161,6 +174,23 @@ jobs:
               --commit-sha "${{ github.event.client_payload.source_commit_sha }}"
           else
             python scripts/fetch_postman_status.py \
+              --output-dir data/projects
+          fi
+        env:
+          SOURCE_REPO_TOKEN: ${{ secrets.SOURCE_REPO_TOKEN }}
+
+      - name: Fetch k6 CI status
+        run: |
+          if [ "${{ github.event_name }}" = "repository_dispatch" ] && [ "${{ github.event.client_payload.source_repo }}" = "DaniHogg/k6-performance-tests" ]; then
+            python scripts/fetch_k6_status.py \
+              --output-dir data/projects \
+              --run-id "${{ github.event.client_payload.source_run_id }}" \
+              --run-url "${{ github.event.client_payload.source_run_url }}" \
+              --branch "${{ github.event.client_payload.source_branch }}" \
+              --commit-sha "${{ github.event.client_payload.source_commit_sha }}" \
+              --results-json incoming/k6-json/k6-results.json
+          else
+            python scripts/fetch_k6_status.py \
               --output-dir data/projects
           fi
         env:

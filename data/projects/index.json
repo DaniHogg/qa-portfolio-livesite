@@ -19,6 +19,10 @@
     {
       "id": "postman-api",
       "summary": "Postman/Newman collection \u2014 full posts CRUD workflow with 19 assertions against the Render backend"
+    },
+    {
+      "id": "k6-performance-tests",
+      "summary": "k6 load testing \u2014 baseline, ramp-up, and soak scenarios against the deployed Render backend, nightly CI"
     }
   ]
 }
