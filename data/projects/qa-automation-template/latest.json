@@ -12,21 +12,21 @@
     "repository_url": "https://github.com/DaniHogg/qa-automation-template"
   },
   "latest": {
-    "run_id": "25654205648",
+    "run_id": "gha-25679582317",
     "source": {
       "provider": "github-actions",
       "workflow": "Update Data And Deploy",
       "branch": "main",
-      "commit_sha": "292d71ed586f3282cc4c8aed9edf68dbf122d943",
-      "run_url": "https://github.com/DaniHogg/qa-automation-template/actions/runs/25654205648"
+      "commit_sha": "ba65133ada452e9639532f06994bb5964df590ba",
+      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/25679582317"
     },
-    "status": "failed",
-    "started_at": "2026-05-11T06:32:20.198000Z",
-    "completed_at": "2026-05-11T06:39:57.261000Z",
-    "duration_seconds": 457,
+    "status": "passed",
+    "started_at": "2026-05-10T05:58:15.611000Z",
+    "completed_at": "2026-05-10T05:58:48.600000Z",
+    "duration_seconds": 32,
     "totals": {
-      "passed": 16,
-      "failed": 5,
+      "passed": 36,
+      "failed": 0,
       "skipped": 0,
       "errors": 0
     },
@@ -34,22 +34,22 @@
       {
         "suite_id": "api-regression",
         "suite_name": "API Regression",
-        "status": "not-run",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 3,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Extended API coverage Not run in this cycle."
+        "notes": "Extended API coverage"
       },
       {
         "suite_id": "api-smoke",
         "suite_name": "API Smoke",
-        "status": "failed",
+        "status": "passed",
         "totals": {
-          "passed": 0,
-          "failed": 5,
+          "passed": 5,
+          "failed": 0,
           "skipped": 0,
           "errors": 0
         },
@@ -70,26 +70,26 @@
       {
         "suite_id": "web-regression",
         "suite_name": "Web Regression",
-        "status": "not-run",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 10,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "UI regression coverage Not run in this cycle."
+        "notes": "UI regression coverage"
       },
       {
         "suite_id": "web-smoke",
         "suite_name": "Web Smoke",
-        "status": "not-run",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 2,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "UI smoke coverage Not run in this cycle."
+        "notes": "UI smoke coverage"
       }
     ],
     "stale_after_days": 7
@@ -100,6 +100,12 @@
       "status": "failed",
       "completed_at": "2026-05-11T06:39:57.261000Z",
       "run_url": "https://github.com/DaniHogg/qa-automation-template/actions/runs/25654205648"
+    },
+    {
+      "run_id": "gha-25679582317",
+      "status": "passed",
+      "completed_at": "2026-05-10T05:58:48.600000Z",
+      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/25679582317"
     },
     {
       "run_id": "gha-25630239483",
@@ -118,14 +124,8 @@
       "status": "passed",
       "completed_at": "2026-05-09T05:43:27.160000Z",
       "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/25602498769"
-    },
-    {
-      "run_id": "25593195996",
-      "status": "passed",
-      "completed_at": "2026-05-09T05:43:27.160000Z",
-      "run_url": "https://github.com/DaniHogg/qa-automation-template/actions/runs/25593195996"
     }
   ],
   "history_limit": 5,
-  "last_refreshed_at": "2026-05-11T06:40:39.665891Z"
+  "last_refreshed_at": "2026-05-11T15:25:32.473627Z"
 }
