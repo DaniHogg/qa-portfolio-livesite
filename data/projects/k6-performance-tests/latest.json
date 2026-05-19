@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-05-19T08:22:20.705073Z",
+  "last_refreshed_at": "2026-05-19T15:38:07.748070Z",
   "project": {
     "id": "k6-performance-tests",
     "name": "k6 Performance Testing",
