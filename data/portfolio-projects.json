@@ -123,18 +123,38 @@
     {
       "category": "Mobile Automation",
       "name": "Appium Mobile Automation",
+      "id": "appium",
       "tech_stack": "Appium, Python, Pytest, Allure",
       "what_tested": "Mobile application flows including UI element interaction, navigation, and end-to-end scenario coverage.",
       "why_it_matters": "Extends automation discipline into the mobile layer, demonstrating stable element handling and repeatable execution on device and emulator targets.",
-      "application": "Mobile test coverage focused on stable element handling and repeatable end-to-end checks."
+      "application": "Mobile test coverage focused on stable element handling and repeatable end-to-end checks.",
+      "links": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/DaniHogg/appium-android-pytest",
+          "external": true
+        }
+      ]
     },
     {
       "category": "Performance Testing",
       "name": "k6 Performance Testing",
+      "id": "k6-performance-tests",
       "tech_stack": "k6, JavaScript, CI pipelines",
       "what_tested": "System behaviour under load, stress, spike, and soak conditions with configurable virtual user ramps.",
       "why_it_matters": "Gives teams and reviewers measurable performance thresholds with published results, surfacing capacity risks before they reach production.",
-      "application": "Load, stress, spike, and soak scenarios with threshold-driven reporting for performance risk visibility."
+      "application": "Load, stress, spike, and soak scenarios with threshold-driven reporting for performance risk visibility.",
+      "links": [
+        {
+          "label": "Latest results",
+          "url": "project.html?project=k6-performance-tests"
+        },
+        {
+          "label": "Repository",
+          "url": "https://github.com/DaniHogg/k6-performance-tests",
+          "external": true
+        }
+      ]
     }
   ]
 }

@@ -276,10 +276,13 @@ async function renderProjectContext() {
 
   try {
     const portfolio = await fetchJson("data/portfolio-projects.json");
-    const match = (portfolio.projects || []).find(
-      (p) => p.name?.toLowerCase().replace(/\s+/g, "-") === projectId ||
-             projectId.includes(p.name?.split(" ")[0]?.toLowerCase())
-    );
+    const projects = portfolio.projects || [];
+    const match =
+      projects.find((p) => p.id === projectId) ||
+      projects.find(
+        (p) => p.name?.toLowerCase().replace(/\s+/g, "-") === projectId ||
+               projectId.includes(p.name?.split(" ")[0]?.toLowerCase())
+      );
 
     if (match) {
       const items = [
