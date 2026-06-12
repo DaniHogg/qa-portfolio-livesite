@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-06-11T16:12:47.088139Z",
+  "last_refreshed_at": "2026-06-12T07:19:04.669510Z",
   "project": {
     "id": "api-testing-pytest",
     "name": "API Testing with Pytest",
