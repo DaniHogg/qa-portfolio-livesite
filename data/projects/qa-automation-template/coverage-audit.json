@@ -1,7 +1,7 @@
 {
   "project_id": "qa-automation-template",
-  "run_id": "27736809855",
-  "generated_at": "2026-06-18T04:32:35.277785Z",
+  "run_id": "gha-27762520467",
+  "generated_at": "2026-06-18T13:22:59.898564Z",
   "summary": {
     "covered_suites": 0,
     "not_covered_suites": 0,
@@ -35,7 +35,7 @@
       "suite_id": "web-regression",
       "expected_test_files": null,
       "observed_results": 10,
-      "status": "failed",
+      "status": "passed",
       "notes": "Suite observed in report but not in expected mapping"
     },
     {

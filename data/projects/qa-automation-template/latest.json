@@ -12,21 +12,21 @@
     "repository_url": "https://github.com/DaniHogg/qa-automation-template"
   },
   "latest": {
-    "run_id": "27736809855",
+    "run_id": "gha-27762520467",
     "source": {
       "provider": "github-actions",
       "workflow": "Update Data And Deploy",
       "branch": "main",
-      "commit_sha": "2760422fbe24fcf9dd6a5a1784c394f9d45e0cd3",
-      "run_url": "https://github.com/DaniHogg/qa-automation-template/actions/runs/27736809855"
+      "commit_sha": "bcb1623c04b7959e8182b667d1c2b928ce6acbe2",
+      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/27762520467"
     },
-    "status": "failed",
-    "started_at": "2026-06-18T04:31:05.850000Z",
-    "completed_at": "2026-06-18T04:32:01.965000Z",
-    "duration_seconds": 56,
+    "status": "passed",
+    "started_at": "2026-06-17T04:31:35.831000Z",
+    "completed_at": "2026-06-17T04:32:16.675000Z",
+    "duration_seconds": 40,
     "totals": {
-      "passed": 35,
-      "failed": 1,
+      "passed": 36,
+      "failed": 0,
       "skipped": 0,
       "errors": 0
     },
@@ -70,10 +70,10 @@
       {
         "suite_id": "web-regression",
         "suite_name": "Web Regression",
-        "status": "failed",
+        "status": "passed",
         "totals": {
-          "passed": 9,
-          "failed": 1,
+          "passed": 10,
+          "failed": 0,
           "skipped": 0,
           "errors": 0
         },
@@ -102,6 +102,12 @@
       "run_url": "https://github.com/DaniHogg/qa-automation-template/actions/runs/27736809855"
     },
     {
+      "run_id": "gha-27762520467",
+      "status": "passed",
+      "completed_at": "2026-06-17T04:32:16.675000Z",
+      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/27762520467"
+    },
+    {
       "run_id": "gha-27692388949",
       "status": "passed",
       "completed_at": "2026-06-17T04:32:16.675000Z",
@@ -118,14 +124,8 @@
       "status": "passed",
       "completed_at": "2026-06-16T04:34:50.243000Z",
       "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/27623008511"
-    },
-    {
-      "run_id": "27594314731",
-      "status": "passed",
-      "completed_at": "2026-06-16T04:34:50.243000Z",
-      "run_url": "https://github.com/DaniHogg/qa-automation-template/actions/runs/27594314731"
     }
   ],
   "history_limit": 5,
-  "last_refreshed_at": "2026-06-18T04:32:35.277408Z"
+  "last_refreshed_at": "2026-06-18T13:22:59.898186Z"
 }
