@@ -12,13 +12,13 @@
     "repository_url": "https://github.com/DaniHogg/qa-automation-template"
   },
   "latest": {
-    "run_id": "27929739712",
+    "run_id": "gha-27958585922",
     "source": {
       "provider": "github-actions",
       "workflow": "Update Data And Deploy",
       "branch": "main",
-      "commit_sha": "2760422fbe24fcf9dd6a5a1784c394f9d45e0cd3",
-      "run_url": "https://github.com/DaniHogg/qa-automation-template/actions/runs/27929739712"
+      "commit_sha": "19855d80e31363cdd92eb44a20a71ea8ba3d391a",
+      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/27958585922"
     },
     "status": "passed",
     "started_at": "2026-06-22T04:32:22.876000Z",
@@ -96,6 +96,12 @@
   },
   "history": [
     {
+      "run_id": "gha-27958585922",
+      "status": "passed",
+      "completed_at": "2026-06-22T04:33:18.367000Z",
+      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/27958585922"
+    },
+    {
       "run_id": "27929739712",
       "status": "passed",
       "completed_at": "2026-06-22T04:33:18.367000Z",
@@ -118,14 +124,8 @@
       "status": "passed",
       "completed_at": "2026-06-20T04:30:08.705000Z",
       "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/27871624867"
-    },
-    {
-      "run_id": "27860191965",
-      "status": "passed",
-      "completed_at": "2026-06-20T04:30:08.705000Z",
-      "run_url": "https://github.com/DaniHogg/qa-automation-template/actions/runs/27860191965"
     }
   ],
   "history_limit": 5,
-  "last_refreshed_at": "2026-06-22T04:33:52.214342Z"
+  "last_refreshed_at": "2026-06-22T14:04:44.586938Z"
 }
