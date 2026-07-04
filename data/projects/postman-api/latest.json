@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-07-04T06:03:37.136451Z",
+  "last_refreshed_at": "2026-07-04T12:32:44.013760Z",
   "project": {
     "id": "postman-api",
     "name": "Postman API Testing",
@@ -12,18 +12,18 @@
     "repository_url": "https://github.com/DaniHogg/Postman-API-Tests"
   },
   "latest": {
-    "run_id": "28647274465",
+    "run_id": "28699867731",
     "source": {
       "provider": "github-actions",
       "workflow": "Postman API Tests CI",
       "branch": "master",
       "commit_sha": "d512448f8c4948b7c126208c46b23572817d0e60",
-      "run_url": "https://github.com/DaniHogg/Postman-API-Tests/actions/runs/28647274465"
+      "run_url": "https://github.com/DaniHogg/Postman-API-Tests/actions/runs/28699867731"
     },
     "status": "passed",
-    "started_at": "2026-07-03T08:05:30Z",
-    "completed_at": "2026-07-03T08:06:08Z",
-    "duration_seconds": 38,
+    "started_at": "2026-07-04T08:00:18Z",
+    "completed_at": "2026-07-04T08:00:52Z",
+    "duration_seconds": 34,
     "totals": {
       "passed": 19,
       "failed": 0,
@@ -119,6 +119,12 @@
   },
   "history": [
     {
+      "run_id": "28647274465",
+      "status": "passed",
+      "completed_at": "2026-07-03T08:06:08Z",
+      "run_url": "https://github.com/DaniHogg/Postman-API-Tests/actions/runs/28647274465"
+    },
+    {
       "run_id": "28575181830",
       "status": "passed",
       "completed_at": "2026-07-02T08:08:01Z",
@@ -141,12 +147,6 @@
       "status": "passed",
       "completed_at": "2026-06-29T08:44:20Z",
       "run_url": "https://github.com/DaniHogg/Postman-API-Tests/actions/runs/28359677939"
-    },
-    {
-      "run_id": "28316125341",
-      "status": "passed",
-      "completed_at": "2026-06-28T08:12:10Z",
-      "run_url": "https://github.com/DaniHogg/Postman-API-Tests/actions/runs/28316125341"
     }
   ]
 }
