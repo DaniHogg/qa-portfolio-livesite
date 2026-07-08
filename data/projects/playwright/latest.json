@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-07-08T04:04:09.577107Z",
+  "last_refreshed_at": "2026-07-08T05:04:01.041291Z",
   "project": {
     "id": "playwright",
     "name": "Playwright Automation",
@@ -11,18 +11,18 @@
     "repository_url": "https://github.com/DaniHogg/playwright-fundamentals"
   },
   "latest": {
-    "run_id": "28843426095",
+    "run_id": "28918797173",
     "source": {
       "provider": "github-actions",
       "workflow": "Playwright Tests",
       "branch": "main",
       "commit_sha": "a7c9ca04ef81c780fae2ab532eeb1958e2a892c3",
-      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/28843426095"
+      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/28918797173"
     },
     "status": "failed",
-    "started_at": "2026-07-07T05:18:13Z",
-    "completed_at": "2026-07-07T05:19:27Z",
-    "duration_seconds": 74,
+    "started_at": "2026-07-08T05:02:35Z",
+    "completed_at": "2026-07-08T05:03:51Z",
+    "duration_seconds": 76,
     "totals": {
       "passed": 34,
       "failed": 0,
@@ -178,6 +178,12 @@
   },
   "history": [
     {
+      "run_id": "28843426095",
+      "status": "failed",
+      "completed_at": "2026-07-07T05:19:27Z",
+      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/28843426095"
+    },
+    {
       "run_id": "28769830419",
       "status": "failed",
       "completed_at": "2026-07-06T05:26:46Z",
@@ -200,12 +206,6 @@
       "status": "failed",
       "completed_at": "2026-07-03T05:17:29Z",
       "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/28640067095"
-    },
-    {
-      "run_id": "28567266062",
-      "status": "failed",
-      "completed_at": "2026-07-02T05:18:55Z",
-      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/28567266062"
     }
   ]
 }
