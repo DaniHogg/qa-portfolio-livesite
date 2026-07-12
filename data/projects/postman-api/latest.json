@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-07-12T07:38:50.357090Z",
+  "last_refreshed_at": "2026-07-12T07:41:42.306091Z",
   "project": {
     "id": "postman-api",
     "name": "Postman API Testing",
@@ -12,20 +12,20 @@
     "repository_url": "https://github.com/DaniHogg/Postman-API-Tests"
   },
   "latest": {
-    "run_id": "29144792000",
+    "run_id": "29184622823",
     "source": {
       "provider": "github-actions",
       "workflow": "Postman API Tests CI",
       "branch": "master",
-      "commit_sha": "d512448f8c4948b7c126208c46b23572817d0e60",
-      "run_url": "https://github.com/DaniHogg/Postman-API-Tests/actions/runs/29144792000"
+      "commit_sha": "9daf6f7afaea0bb77db454d91005b47382ecca6c",
+      "run_url": "https://github.com/DaniHogg/Postman-API-Tests/actions/runs/29184622823"
     },
     "status": "passed",
-    "started_at": "2026-07-11T07:36:54Z",
-    "completed_at": "2026-07-11T07:37:26Z",
-    "duration_seconds": 32,
+    "started_at": "2026-07-12T07:41:11Z",
+    "completed_at": "2026-07-12T07:41:32Z",
+    "duration_seconds": 21,
     "totals": {
-      "passed": 19,
+      "passed": 35,
       "failed": 0,
       "skipped": 0,
       "errors": 0
@@ -36,7 +36,7 @@
         "suite_name": "1 - Health Check",
         "status": "passed",
         "totals": {
-          "passed": 3,
+          "passed": 4,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -48,7 +48,7 @@
         "suite_name": "2 - List Posts",
         "status": "passed",
         "totals": {
-          "passed": 3,
+          "passed": 4,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -60,7 +60,19 @@
         "suite_name": "3 - Create Post",
         "status": "passed",
         "totals": {
-          "passed": 3,
+          "passed": 4,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "Assertion counts derived from Newman JSON reporter."
+      },
+      {
+        "suite_id": "3b - Create Post - Malformed JSON (422, not 500)",
+        "suite_name": "3b - Create Post - Malformed JSON (422, not 500)",
+        "status": "passed",
+        "totals": {
+          "passed": 4,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -72,7 +84,7 @@
         "suite_name": "4 - Get Post by Id",
         "status": "passed",
         "totals": {
-          "passed": 3,
+          "passed": 5,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -80,11 +92,23 @@
         "notes": "Assertion counts derived from Newman JSON reporter."
       },
       {
-        "suite_id": "5 - Update Post",
-        "suite_name": "5 - Update Post",
+        "suite_id": "5 - Update Post (PUT)",
+        "suite_name": "5 - Update Post (PUT)",
         "status": "passed",
         "totals": {
-          "passed": 3,
+          "passed": 4,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "Assertion counts derived from Newman JSON reporter."
+      },
+      {
+        "suite_id": "5b - Patch Post (PATCH)",
+        "suite_name": "5b - Patch Post (PATCH)",
+        "status": "passed",
+        "totals": {
+          "passed": 4,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -96,7 +120,7 @@
         "suite_name": "6 - Delete Post",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 3,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -104,11 +128,11 @@
         "notes": "Assertion counts derived from Newman JSON reporter."
       },
       {
-        "suite_id": "7 - Get Non-existent Post (404)",
-        "suite_name": "7 - Get Non-existent Post (404)",
+        "suite_id": "8 - Get Deleted Post (404)",
+        "suite_name": "8 - Get Deleted Post (404)",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 3,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -118,6 +142,12 @@
     ]
   },
   "history": [
+    {
+      "run_id": "29144792000",
+      "status": "passed",
+      "completed_at": "2026-07-11T07:37:26Z",
+      "run_url": "https://github.com/DaniHogg/Postman-API-Tests/actions/runs/29144792000"
+    },
     {
       "run_id": "29078967054",
       "status": "passed",
@@ -141,12 +171,6 @@
       "status": "passed",
       "completed_at": "2026-07-07T08:11:08Z",
       "run_url": "https://github.com/DaniHogg/Postman-API-Tests/actions/runs/28851510815"
-    },
-    {
-      "run_id": "28778710948",
-      "status": "passed",
-      "completed_at": "2026-07-06T08:37:08Z",
-      "run_url": "https://github.com/DaniHogg/Postman-API-Tests/actions/runs/28778710948"
     }
   ]
 }

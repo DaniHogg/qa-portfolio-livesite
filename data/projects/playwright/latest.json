@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-07-12T07:38:46.847422Z",
+  "last_refreshed_at": "2026-07-12T07:41:38.453134Z",
   "project": {
     "id": "playwright",
     "name": "Playwright Automation",
@@ -11,22 +11,22 @@
     "repository_url": "https://github.com/DaniHogg/playwright-fundamentals"
   },
   "latest": {
-    "run_id": "29180601037",
+    "run_id": "29184559384",
     "source": {
       "provider": "github-actions",
       "workflow": "Playwright Tests",
       "branch": "main",
-      "commit_sha": "a7c9ca04ef81c780fae2ab532eeb1958e2a892c3",
-      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/29180601037"
+      "commit_sha": "0501da24e1424403c50258bb66dffa8b95279708",
+      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/29184559384"
     },
     "status": "failed",
-    "started_at": "2026-07-12T05:03:19Z",
-    "completed_at": "2026-07-12T05:04:30Z",
-    "duration_seconds": 71,
+    "started_at": "2026-07-12T07:38:42Z",
+    "completed_at": "2026-07-12T07:41:22Z",
+    "duration_seconds": 160,
     "totals": {
-      "passed": 34,
+      "passed": 96,
       "failed": 0,
-      "skipped": 0,
+      "skipped": 10,
       "errors": 0
     },
     "suites": [
@@ -35,7 +35,7 @@
         "suite_name": "Accessibility",
         "status": "passed",
         "totals": {
-          "passed": 5,
+          "passed": 10,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -47,7 +47,19 @@
         "suite_name": "Advanced",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 4,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "Counts derived from Playwright JSON report artifact."
+      },
+      {
+        "suite_id": "api-contract",
+        "suite_name": "Api-Contract",
+        "status": "passed",
+        "totals": {
+          "passed": 4,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -59,7 +71,7 @@
         "suite_name": "Auth",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 4,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -71,7 +83,7 @@
         "suite_name": "Basic",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 4,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -83,7 +95,7 @@
         "suite_name": "Basic Site Test",
         "status": "passed",
         "totals": {
-          "passed": 4,
+          "passed": 8,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -95,7 +107,7 @@
         "suite_name": "Content Interaction",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 4,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -107,7 +119,7 @@
         "suite_name": "Error Handling",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 4,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -119,6 +131,78 @@
         "suite_name": "Forms",
         "status": "passed",
         "totals": {
+          "passed": 8,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "Counts derived from Playwright JSON report artifact."
+      },
+      {
+        "suite_id": "01-first-test",
+        "suite_name": "01-First-Test",
+        "status": "passed",
+        "totals": {
+          "passed": 4,
+          "failed": 0,
+          "skipped": 2,
+          "errors": 0
+        },
+        "notes": "Counts derived from Playwright JSON report artifact."
+      },
+      {
+        "suite_id": "02-locators-and-assertions",
+        "suite_name": "02-Locators-And-Assertions",
+        "status": "passed",
+        "totals": {
+          "passed": 4,
+          "failed": 0,
+          "skipped": 2,
+          "errors": 0
+        },
+        "notes": "Counts derived from Playwright JSON report artifact."
+      },
+      {
+        "suite_id": "03-navigation-and-clicks",
+        "suite_name": "03-Navigation-And-Clicks",
+        "status": "passed",
+        "totals": {
+          "passed": 4,
+          "failed": 0,
+          "skipped": 2,
+          "errors": 0
+        },
+        "notes": "Counts derived from Playwright JSON report artifact."
+      },
+      {
+        "suite_id": "04-query-params-and-states",
+        "suite_name": "04-Query-Params-And-States",
+        "status": "passed",
+        "totals": {
+          "passed": 6,
+          "failed": 0,
+          "skipped": 2,
+          "errors": 0
+        },
+        "notes": "Counts derived from Playwright JSON report artifact."
+      },
+      {
+        "suite_id": "05-api-signal-and-debug-basics",
+        "suite_name": "05-Api-Signal-And-Debug-Basics",
+        "status": "passed",
+        "totals": {
+          "passed": 4,
+          "failed": 0,
+          "skipped": 2,
+          "errors": 0
+        },
+        "notes": "Counts derived from Playwright JSON report artifact."
+      },
+      {
+        "suite_id": "mediawiki_features",
+        "suite_name": "Mediawiki Features",
+        "status": "passed",
+        "totals": {
           "passed": 4,
           "failed": 0,
           "skipped": 0,
@@ -127,8 +211,8 @@
         "notes": "Counts derived from Playwright JSON report artifact."
       },
       {
-        "suite_id": "mediawiki_features",
-        "suite_name": "Mediawiki Features",
+        "suite_id": "mobile",
+        "suite_name": "Mobile",
         "status": "passed",
         "totals": {
           "passed": 2,
@@ -143,7 +227,7 @@
         "suite_name": "Navigation",
         "status": "passed",
         "totals": {
-          "passed": 5,
+          "passed": 10,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -155,7 +239,7 @@
         "suite_name": "Performance",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 4,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -167,7 +251,7 @@
         "suite_name": "Search Results",
         "status": "passed",
         "totals": {
-          "passed": 2,
+          "passed": 4,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -177,6 +261,12 @@
     ]
   },
   "history": [
+    {
+      "run_id": "29180601037",
+      "status": "failed",
+      "completed_at": "2026-07-12T05:04:30Z",
+      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/29180601037"
+    },
     {
       "run_id": "29140536340",
       "status": "failed",
@@ -200,12 +290,6 @@
       "status": "failed",
       "completed_at": "2026-07-08T05:03:51Z",
       "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/28918797173"
-    },
-    {
-      "run_id": "28843426095",
-      "status": "failed",
-      "completed_at": "2026-07-07T05:19:27Z",
-      "run_url": "https://github.com/DaniHogg/playwright-fundamentals/actions/runs/28843426095"
     }
   ]
 }
