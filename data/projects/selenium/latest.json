@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-07-12T06:04:08.428480Z",
+  "last_refreshed_at": "2026-07-12T07:38:47.726870Z",
   "project": {
     "id": "selenium",
     "name": "Selenium Automation",
@@ -12,20 +12,20 @@
     "repository_url": "https://github.com/DaniHogg/Selenium"
   },
   "latest": {
-    "run_id": "29181978398",
+    "run_id": "29184529276",
     "source": {
       "provider": "github-actions",
       "workflow": "Selenium CI",
       "branch": "main",
-      "commit_sha": "6d710138f947228075e0dbccf9490ce9c53d3af3",
-      "run_url": "https://github.com/DaniHogg/Selenium/actions/runs/29181978398"
+      "commit_sha": "02210fd94478d56d3d3ac1065197daae9ce974a0",
+      "run_url": "https://github.com/DaniHogg/Selenium/actions/runs/29184529276"
     },
     "status": "passed",
-    "started_at": "2026-07-12T05:59:47Z",
-    "completed_at": "2026-07-12T06:03:57Z",
-    "duration_seconds": 250,
+    "started_at": "2026-07-12T07:37:32Z",
+    "completed_at": "2026-07-12T07:38:30Z",
+    "duration_seconds": 58,
     "totals": {
-      "passed": 28,
+      "passed": 33,
       "failed": 0,
       "skipped": 0,
       "errors": 0
@@ -44,11 +44,23 @@
         "notes": "Counts derived from pytest-json-report artifact."
       },
       {
+        "suite_id": "test_agentic_qa_tool",
+        "suite_name": "Agentic Qa Tool",
+        "status": "passed",
+        "totals": {
+          "passed": 4,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "notes": "Counts derived from pytest-json-report artifact."
+      },
+      {
         "suite_id": "test_dashboard",
         "suite_name": "Dashboard",
         "status": "passed",
         "totals": {
-          "passed": 6,
+          "passed": 5,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -84,7 +96,7 @@
         "suite_name": "Navigation",
         "status": "passed",
         "totals": {
-          "passed": 5,
+          "passed": 6,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -108,7 +120,7 @@
         "suite_name": "Smoke",
         "status": "passed",
         "totals": {
-          "passed": 4,
+          "passed": 5,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -118,6 +130,12 @@
     ]
   },
   "history": [
+    {
+      "run_id": "29181978398",
+      "status": "passed",
+      "completed_at": "2026-07-12T06:03:57Z",
+      "run_url": "https://github.com/DaniHogg/Selenium/actions/runs/29181978398"
+    },
     {
       "run_id": "29141861348",
       "status": "passed",
@@ -141,12 +159,6 @@
       "status": "passed",
       "completed_at": "2026-07-08T05:59:39Z",
       "run_url": "https://github.com/DaniHogg/Selenium/actions/runs/28921073218"
-    },
-    {
-      "run_id": "28845971238",
-      "status": "passed",
-      "completed_at": "2026-07-07T06:21:51Z",
-      "run_url": "https://github.com/DaniHogg/Selenium/actions/runs/28845971238"
     }
   ]
 }
