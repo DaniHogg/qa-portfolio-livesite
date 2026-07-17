@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-07-16T12:41:25.363714Z",
+  "last_refreshed_at": "2026-07-17T04:01:57.878301Z",
   "project": {
     "id": "k6-performance-tests",
     "name": "k6 Performance Testing",
@@ -11,18 +11,18 @@
     "repository_url": "https://github.com/DaniHogg/k6-performance-tests"
   },
   "latest": {
-    "run_id": "29468341682",
+    "run_id": "29551764935",
     "source": {
       "provider": "github-actions",
       "workflow": "k6 Performance Tests",
       "branch": "main",
       "commit_sha": "311e603c98af09bccb16770f0a843325bace9885",
-      "run_url": "https://github.com/DaniHogg/k6-performance-tests/actions/runs/29468341682"
+      "run_url": "https://github.com/DaniHogg/k6-performance-tests/actions/runs/29551764935"
     },
     "status": "failed",
-    "started_at": "2026-07-16T03:10:26Z",
-    "completed_at": "2026-07-16T03:11:06Z",
-    "duration_seconds": 40,
+    "started_at": "2026-07-17T03:10:59Z",
+    "completed_at": "2026-07-17T03:11:41Z",
+    "duration_seconds": 42,
     "totals": {
       "passed": 0,
       "failed": 0,
@@ -46,6 +46,12 @@
   },
   "history": [
     {
+      "run_id": "29468341682",
+      "status": "failed",
+      "completed_at": "2026-07-16T03:11:06Z",
+      "run_url": "https://github.com/DaniHogg/k6-performance-tests/actions/runs/29468341682"
+    },
+    {
       "run_id": "29385890808",
       "status": "failed",
       "completed_at": "2026-07-15T03:11:21Z",
@@ -68,12 +74,6 @@
       "status": "failed",
       "completed_at": "2026-07-12T03:12:39Z",
       "run_url": "https://github.com/DaniHogg/k6-performance-tests/actions/runs/29177895991"
-    },
-    {
-      "run_id": "29137585361",
-      "status": "failed",
-      "completed_at": "2026-07-11T03:11:26Z",
-      "run_url": "https://github.com/DaniHogg/k6-performance-tests/actions/runs/29137585361"
     }
   ]
 }
