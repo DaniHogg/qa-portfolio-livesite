@@ -12,21 +12,21 @@
     "repository_url": "https://github.com/DaniHogg/qa-automation-template"
   },
   "latest": {
-    "run_id": "29890052326",
+    "run_id": "gha-29920523347",
     "source": {
       "provider": "github-actions",
       "workflow": "Update Data And Deploy",
       "branch": "main",
-      "commit_sha": "7c7dfb8de9733eab1673ca984acde2c54905b6f6",
-      "run_url": "https://github.com/DaniHogg/qa-automation-template/actions/runs/29890052326"
+      "commit_sha": "428a24717916806021e93581ecf37bea8a395dea",
+      "run_url": "https://github.com/DaniHogg/qa-portfolio-livesite/actions/runs/29920523347"
     },
-    "status": "failed",
-    "started_at": "2026-07-22T04:04:09.251000Z",
-    "completed_at": "2026-07-22T04:04:36.004000Z",
-    "duration_seconds": 26,
+    "status": "passed",
+    "started_at": "2026-07-12T04:11:31.265000Z",
+    "completed_at": "2026-07-12T04:12:00.901000Z",
+    "duration_seconds": 29,
     "totals": {
-      "passed": 37,
-      "failed": 3,
+      "passed": 36,
+      "failed": 0,
       "skipped": 0,
       "errors": 0
     },
@@ -34,10 +34,10 @@
       {
         "suite_id": "api-regression",
         "suite_name": "API Regression",
-        "status": "failed",
+        "status": "passed",
         "totals": {
-          "passed": 8,
-          "failed": 3,
+          "passed": 3,
+          "failed": 0,
           "skipped": 0,
           "errors": 0
         },
@@ -60,7 +60,7 @@
         "suite_name": "Unit",
         "status": "passed",
         "totals": {
-          "passed": 24,
+          "passed": 16,
           "failed": 0,
           "skipped": 0,
           "errors": 0
@@ -70,26 +70,26 @@
       {
         "suite_id": "web-regression",
         "suite_name": "Web Regression",
-        "status": "not-run",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 10,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "UI regression coverage Not run in this cycle."
+        "notes": "UI regression coverage"
       },
       {
         "suite_id": "web-smoke",
         "suite_name": "Web Smoke",
-        "status": "not-run",
+        "status": "passed",
         "totals": {
-          "passed": 0,
+          "passed": 2,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "UI smoke coverage Not run in this cycle."
+        "notes": "UI smoke coverage"
       }
     ],
     "stale_after_days": 7
@@ -127,5 +127,5 @@
     }
   ],
   "history_limit": 5,
-  "last_refreshed_at": "2026-07-22T04:05:10.915996Z"
+  "last_refreshed_at": "2026-07-22T12:39:46.120910Z"
 }
