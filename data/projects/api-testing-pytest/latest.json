@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-08-14T06:08:02.578512Z",
+  "last_refreshed_at": "2026-08-15T03:33:03.908683Z",
   "project": {
     "id": "api-testing-pytest",
     "name": "API Testing with Pytest",
@@ -12,20 +12,20 @@
     "repository_url": "https://github.com/DaniHogg/API-testing-pytest"
   },
   "latest": {
-    "run_id": "31676963852",
+    "run_id": "31779019469",
     "source": {
       "provider": "github-actions",
       "workflow": "API Tests CI",
       "branch": "main",
       "commit_sha": "acda555ff5b65b1ba2b165c5f009f9060eeceb62",
-      "run_url": "https://github.com/DaniHogg/API-testing-pytest/actions/runs/31676963852"
+      "run_url": "https://github.com/DaniHogg/API-testing-pytest/actions/runs/31779019469"
     },
-    "status": "passed",
-    "started_at": "2026-08-13T07:14:38Z",
-    "completed_at": "2026-08-13T07:15:11Z",
-    "duration_seconds": 33,
+    "status": "failed",
+    "started_at": "2026-08-14T07:12:03Z",
+    "completed_at": "2026-08-14T07:12:37Z",
+    "duration_seconds": 34,
     "totals": {
-      "passed": 22,
+      "passed": 0,
       "failed": 0,
       "skipped": 0,
       "errors": 0
@@ -34,18 +34,24 @@
       {
         "suite_id": "test_api",
         "suite_name": "Api",
-        "status": "passed",
+        "status": "failed",
         "totals": {
-          "passed": 22,
+          "passed": 0,
           "failed": 0,
           "skipped": 0,
           "errors": 0
         },
-        "notes": "Counts derived from pytest-json-report artifact."
+        "notes": "Per-test counts unavailable: no api-pytest-json artifact was provided for this run."
       }
     ]
   },
   "history": [
+    {
+      "run_id": "31676963852",
+      "status": "passed",
+      "completed_at": "2026-08-13T07:15:11Z",
+      "run_url": "https://github.com/DaniHogg/API-testing-pytest/actions/runs/31676963852"
+    },
     {
       "run_id": "31572957809",
       "status": "passed",
@@ -69,12 +75,6 @@
       "status": "failed",
       "completed_at": "2026-08-09T06:41:16Z",
       "run_url": "https://github.com/DaniHogg/API-testing-pytest/actions/runs/31299419551"
-    },
-    {
-      "run_id": "31244330773",
-      "status": "failed",
-      "completed_at": "2026-08-08T06:37:52Z",
-      "run_url": "https://github.com/DaniHogg/API-testing-pytest/actions/runs/31244330773"
     }
   ]
 }
