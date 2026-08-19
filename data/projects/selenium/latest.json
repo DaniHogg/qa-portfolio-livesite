@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0.0",
-  "last_refreshed_at": "2026-08-19T04:33:08.695172Z",
+  "last_refreshed_at": "2026-08-19T05:22:00.066418Z",
   "project": {
     "id": "selenium",
     "name": "Selenium Automation",
@@ -12,18 +12,18 @@
     "repository_url": "https://github.com/DaniHogg/Selenium"
   },
   "latest": {
-    "run_id": "32102446333",
+    "run_id": "32219061044",
     "source": {
       "provider": "github-actions",
       "workflow": "Selenium CI",
       "branch": "main",
       "commit_sha": "02210fd94478d56d3d3ac1065197daae9ce974a0",
-      "run_url": "https://github.com/DaniHogg/Selenium/actions/runs/32102446333"
+      "run_url": "https://github.com/DaniHogg/Selenium/actions/runs/32219061044"
     },
     "status": "passed",
-    "started_at": "2026-08-18T05:19:40Z",
-    "completed_at": "2026-08-18T05:20:33Z",
-    "duration_seconds": 53,
+    "started_at": "2026-08-19T05:20:33Z",
+    "completed_at": "2026-08-19T05:21:43Z",
+    "duration_seconds": 70,
     "totals": {
       "passed": 33,
       "failed": 0,
@@ -131,6 +131,12 @@
   },
   "history": [
     {
+      "run_id": "32102446333",
+      "status": "passed",
+      "completed_at": "2026-08-18T05:20:33Z",
+      "run_url": "https://github.com/DaniHogg/Selenium/actions/runs/32102446333"
+    },
+    {
       "run_id": "31997903018",
       "status": "passed",
       "completed_at": "2026-08-17T05:27:24Z",
@@ -153,12 +159,6 @@
       "status": "passed",
       "completed_at": "2026-08-14T06:07:43Z",
       "run_url": "https://github.com/DaniHogg/Selenium/actions/runs/31775181335"
-    },
-    {
-      "run_id": "31672809923",
-      "status": "passed",
-      "completed_at": "2026-08-13T06:10:21Z",
-      "run_url": "https://github.com/DaniHogg/Selenium/actions/runs/31672809923"
     }
   ]
 }
